@@ -28,6 +28,14 @@ const routes: Routes = [
     path: 'pedidos-finalizados',
     loadChildren: () => import('./pedidos-finalizados/pedidos-finalizados.module').then( m => m.PedidosFinalizadosPageModule)
   },
+  {
+    path: 'cadastro-petshop',
+    loadChildren: () => import('./cadastro-petshop/cadastro-petshop.module').then( m => m.CadastroPetshopPageModule)
+  },
+  {
+    path: 'inicial-petshop',
+    loadChildren: () => import('./inicial-petshop/inicial-petshop.module').then( m => m.InicialPetshopPageModule)
+  },
   
 ];
 
