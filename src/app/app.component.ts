@@ -32,6 +32,16 @@ export class AppComponent implements OnInit {
       url: '/pedidos-finalizados',
       icon: 'folder'
     },
+    {
+    title: 'Configuração',
+    url: '/configuracao',
+    icon: 'build'
+    },
+    {
+    title: 'sair',
+    url: '/sair-petshop',
+    icon: 'exit'
+  },
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 

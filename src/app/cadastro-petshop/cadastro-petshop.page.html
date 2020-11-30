@@ -21,24 +21,6 @@
    </ion-item>
  
    <ion-item id="input">
-     <ion-label position="floating">Telefone:</ion-label>
-     <ion-input type="text"></ion-input>
-    <!-- formControlName="nome" = vinculei com o ts-->
-   </ion-item>
- 
-   <ion-item id="input">
-     <ion-label position="floating" >CNPJ:</ion-label>
-     <ion-input type="text" ></ion-input>
-    <!-- formControlName="nome" = vinculei com o ts-->
-   </ion-item>
- 
-   <ion-item id="input">
-     <ion-label position="floating">Endereço:</ion-label>
-     <ion-input type="text"></ion-input>
-    <!-- formControlName="nome" = vinculei com o ts-->
-   </ion-item>
- 
-   <ion-item id="input">
      <ion-label position="floating" >Senha:</ion-label>
      <ion-input type="password" ></ion-input>
     <!-- formControlName="nome" = vinculei com o ts-->
@@ -49,7 +31,7 @@
    </ion-button>
   </form>
  
-  <p>Já possui um cadastro ? <strong>Logar-se</strong></p>
+  <p>Já possui um cadastro ? <strong [routerLink]="['/login-petshop']">Logar-se</strong></p>
  
   
  

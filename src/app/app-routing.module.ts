@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login-petshop',
+    redirectTo: 'inicial-petshop',
     pathMatch: 'full'
   },
   
@@ -35,6 +35,14 @@ const routes: Routes = [
   {
     path: 'inicial-petshop',
     loadChildren: () => import('./inicial-petshop/inicial-petshop.module').then( m => m.InicialPetshopPageModule)
+  },
+  {
+    path: 'configuracao',
+    loadChildren: () => import('./configuracao/configuracao.module').then( m => m.ConfiguracaoPageModule)
+  },
+  {
+    path: 'sair-petshop',
+    loadChildren: () => import('./sair-petshop/sair-petshop.module').then( m => m.SairPetshopPageModule)
   },
   
 ];

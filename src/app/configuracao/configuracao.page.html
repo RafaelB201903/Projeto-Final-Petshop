@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Configuração</ion-title>
+    <ion-buttons slot="start" style="color:#41403C">
+      <ion-button [routerLink]="['/home-petshop']" >
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card>
+  
+    <ion-card-header>
+      <ion-card-title>Atualizar Informações</ion-card-title>
+      
+    </ion-card-header>
+  
+    <ion-card-content>
+     
+      <form id="#form">
+  
+        <ion-item id="input">
+          <ion-label position="floating">Nome:</ion-label>
+          <ion-input type="text"></ion-input>
+         <!-- formControlName="nome" = vinculei com o ts-->
+        </ion-item>
+      
+        <ion-item id="input">
+          <ion-label position="floating" >E-mail:</ion-label>
+          <ion-input type="text" ></ion-input>
+         <!-- formControlName="nome" = vinculei com o ts-->
+        </ion-item>
+      
+        <ion-item id="input">
+          <ion-label position="floating">Telefone:</ion-label>
+          <ion-input type="text"></ion-input>
+         <!-- formControlName="nome" = vinculei com o ts-->
+        </ion-item>
+      
+        <ion-item id="input">
+          <ion-label position="floating" >CPF:</ion-label>
+          <ion-input type="text" ></ion-input>
+         <!-- formControlName="nome" = vinculei com o ts-->
+        </ion-item>
+      
+        <ion-item id="input">
+          <ion-label position="floating">Endereço:</ion-label>
+          <ion-input type="text"></ion-input>
+         <!-- formControlName="nome" = vinculei com o ts-->
+        </ion-item>
+      
+        <ion-item id="input">
+          <ion-label position="floating" >Senha:</ion-label>
+          <ion-input type="password" ></ion-input>
+         <!-- formControlName="nome" = vinculei com o ts-->
+        </ion-item>
+      
+        <ion-button id="button-atualizar" expand="block" shape="round">
+          Atualizar
+        </ion-button>
+       </form>
+  
+  </ion-card-content>
+  </ion-card>
+
+</ion-content>

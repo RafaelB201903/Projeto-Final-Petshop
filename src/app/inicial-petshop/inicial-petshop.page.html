@@ -5,13 +5,13 @@
 
   <img src="assets/icon/logo-teste3.png">
 
-  <ion-button expand="block" shape="round">
+  <ion-button [routerLink]="['/login-petshop']" expand="block" shape="round">
     Logar
   </ion-button>
 
-  <P >Não possui uma conta ? cadastre-se</P>
+  <P [routerLink]="['/cadastro-petshop']" >Esqueceu sua senha ?</P>
 
-  <ion-button id="botao-cadastrar" expand="block" shape="round">
+  <ion-button [routerLink]="['/cadastro-petshop']" id="botao-cadastrar" expand="block" shape="round">
     Cadastrar-se
   </ion-button>
 

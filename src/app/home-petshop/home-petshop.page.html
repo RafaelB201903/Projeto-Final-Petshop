@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons slot="start" id="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Tela Inicial</ion-title>
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" id="sair">
       <ion-button routerLinks="/cadastro-cliente">sair
         <ion-icon name="exit-outline"></ion-icon>
       </ion-button>
@@ -37,7 +37,7 @@
       Clique no botão abaixo para verificar se algum clientes solicitou um pedido
     </ion-card-content>
       
-    <ion-button expand="block">Pedidos novos</ion-button>
+    <ion-button (click)="goPage()" expand="block">Pedidos novos</ion-button>
  
   </ion-card>
   
