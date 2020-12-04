@@ -2,11 +2,11 @@ import { MenuController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-cadastro-petshop',
-  templateUrl: './cadastro-petshop.page.html',
-  styleUrls: ['./cadastro-petshop.page.scss'],
+  selector: 'app-redefinir-senha',
+  templateUrl: './redefinir-senha.page.html',
+  styleUrls: ['./redefinir-senha.page.scss'],
 })
-export class CadastroPetshopPage implements OnInit {
+export class RedefinirSenhaPage implements OnInit {
 
   constructor(private menuCtrl: MenuController) { }
 

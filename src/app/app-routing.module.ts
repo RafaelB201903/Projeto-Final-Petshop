@@ -17,32 +17,44 @@ const routes: Routes = [
     loadChildren: () => import('./home-petshop/home-petshop.module').then( m => m.HomePetshopPageModule)
   },
   {
-    path: 'pedidos-novos',
-    loadChildren: () => import('./pedidos-novos/pedidos-novos.module').then( m => m.PedidosNovosPageModule)
+    path: 'inicial-petshop',
+    loadChildren: () => import('./inicial-petshop/inicial-petshop.module').then( m => m.InicialPetshopPageModule)
   },
   {
-    path: 'pedidos-em-andamento',
-    loadChildren: () => import('./pedidos-em-andamento/pedidos-em-andamento.module').then( m => m.PedidosEmAndamentoPageModule)
-  },
-  {
-    path: 'pedidos-finalizados',
-    loadChildren: () => import('./pedidos-finalizados/pedidos-finalizados.module').then( m => m.PedidosFinalizadosPageModule)
+    path: 'sair-petshop',
+    loadChildren: () => import('./sair-petshop/sair-petshop.module').then( m => m.SairPetshopPageModule)
   },
   {
     path: 'cadastro-petshop',
     loadChildren: () => import('./cadastro-petshop/cadastro-petshop.module').then( m => m.CadastroPetshopPageModule)
   },
   {
-    path: 'inicial-petshop',
-    loadChildren: () => import('./inicial-petshop/inicial-petshop.module').then( m => m.InicialPetshopPageModule)
+    path: 'redefinir-senha',
+    loadChildren: () => import('./redefinir-senha/redefinir-senha.module').then( m => m.RedefinirSenhaPageModule)
   },
   {
-    path: 'configuracao',
-    loadChildren: () => import('./configuracao/configuracao.module').then( m => m.ConfiguracaoPageModule)
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   },
   {
-    path: 'sair-petshop',
-    loadChildren: () => import('./sair-petshop/sair-petshop.module').then( m => m.SairPetshopPageModule)
+    path: 'tabs',
+    loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'pedidos-novos',
+    loadChildren: () => import('./pages/pedidos-novos/pedidos-novos.module').then( m => m.PedidosNovosPageModule)
+  },
+  {
+    path: 'pedidos-novos',
+    loadChildren: () => import('./pages/pedidos-novos/pedidos-novos.module').then( m => m.PedidosNovosPageModule)
+  },
+  {
+    path: 'pedidos-em-andamento',
+    loadChildren: () => import('./pages/pedidos-em-andamento/pedidos-em-andamento.module').then( m => m.PedidosEmAndamentoPageModule)
+  },
+  {
+    path: 'pedidos-finalizados',
+    loadChildren: () => import('./pages/pedidos-finalizados/pedidos-finalizados.module').then( m => m.PedidosFinalizadosPageModule)
   },
   
 ];

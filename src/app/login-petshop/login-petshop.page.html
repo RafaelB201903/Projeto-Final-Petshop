@@ -11,25 +11,25 @@
  
    <!--<h1 style="text-align: center;">Logar</h1>-->
    <ion-card-content>
-  <form >
+  <form [formGroup]="formGroup">
  
    <ion-item>
-     <ion-label position="floating"><ion-icon name="mail-outline" item-start></ion-icon>
+     <ion-label  position="floating"><ion-icon name="mail-outline" item-start></ion-icon>
      E-mail
      </ion-label>
-     <ion-input type="text"></ion-input>
+     <ion-input formControlName="username" type="text"></ion-input>
     <!-- formControlName="nome" = vinculei com o ts-->
    </ion-item>
  
    <ion-item >
-     <ion-label position="floating" ><ion-icon name="key-outline" item-start></ion-icon>
+     <ion-label  position="floating" ><ion-icon name="key-outline" item-start></ion-icon>
      Senha
      </ion-label>
-     <ion-input type="password" ></ion-input>
+     <ion-input formControlName="password" type="password" ></ion-input>
     <!-- formControlName="nome" = vinculei com o ts-->
    </ion-item>
  
-   <ion-button expand="block" shape="round">
+   <ion-button (click)="autenticar()" expand="block" shape="round">
      Login
    </ion-button>
    
@@ -37,7 +37,7 @@
  
    <p [routerLink]="['/cadastro-petshop']">Cadastre-se</p>
  
-   <p [routerLink]="['/cadastro-petshop']">Recuperar senha</p>
+   <p [routerLink]="['/redefinir-senha']">Recuperar senha</p>
  
  </ion-card-content>
  </ion-card>

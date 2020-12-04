@@ -1,4 +1,6 @@
+import { MenuController, NavController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-sair-petshop',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SairPetshopPage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl : NavController,
+    private auth: AngularFireAuth,
+    private menuCtrl : MenuController) { }
 
   ngOnInit() {
+    this.logout();
   }
 
+  logout(){
+    this.auth.signOut().then(data=>{
+      this.menuCtrl.enable(false);
+      this.navCtrl.navigateRoot(['/login-petshop']);
+    })
+  }
 }

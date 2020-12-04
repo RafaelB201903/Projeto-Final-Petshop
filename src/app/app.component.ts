@@ -18,24 +18,14 @@ export class AppComponent implements OnInit {
       icon: 'home'
     },
     {
-      title: 'pedidos novos',
-      url: '/pedidos-novos',
+      title: 'pedidos',
+      url: '/tabs/pedidos-novos',
       icon: 'clipboard'
     },
     {
-      title: 'pedidos em andamento',
-      url: '/pedidos-em-andamento',
-      icon: 'hourglass'
-    },
-    {
-      title: 'pedidos finalizados',
-      url: '/pedidos-finalizados',
-      icon: 'folder'
-    },
-    {
-    title: 'Configuração',
-    url: '/configuracao',
-    icon: 'build'
+    title: 'perfil',
+    url: '/perfil',
+    icon: 'person'
     },
     {
     title: 'sair',
