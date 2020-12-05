@@ -1,0 +1,43 @@
+ion-toolbar{
+    --background:#66DE86;
+    }
+    
+    ion-title {
+    color: floralwhite;
+    }
+    
+    #start {
+    color:floralwhite;
+    }
+    
+
+
+#finalizado {
+    color: #209e00;
+}
+
+#andamento{
+    color: #ff2c2c;
+}
+
+ion-card-title {
+    text-align: center;
+}
+
+img {
+    margin: auto;
+    display: flex;
+    align-items: center;
+
+    height:60% ;
+    width:60% ;
+}
+
+p {
+    padding-left: 5%;
+}
+
+#p-status {
+    padding-top: 5%;
+    
+}

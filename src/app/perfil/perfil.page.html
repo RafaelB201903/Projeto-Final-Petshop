@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-title>Perfil</ion-title>
     <ion-buttons slot="start" style="color:#5C5D58">
@@ -11,60 +11,116 @@
 
 <ion-content>
 
+  <div class="area-perfil">
+    
+    <ion-row>
+      <ion-col col-3>
+        <p>Pedidos Aceito</p>
+        <p>2</p>
+      </ion-col>
+      <ion-col id="header" col-3>
+        <img src="assets/icon/lightpet-icon.png" />
+      </ion-col>
+      <ion-col col-3>
+         <p>Pedidos Concluidos</p>
+         
+         <p>1</p>
+      </ion-col>
+    </ion-row>
+  
+      <ion-row id="header">
+        <h1>Fernando</h1>
+      </ion-row>
+    </div>
 
-  <ion-card>
-  
-    <ion-card-header>
-      <ion-card-title>Atualizar Informações</ion-card-title>
-      
-    </ion-card-header>
-  
-    <ion-card-content>
+
+  <ion-card-header>
+    <ion-card-title>Atualizar Informações</ion-card-title>
+    
+  </ion-card-header>
+
+  <ion-card-content>
+   
+    <form id="#form">
+
      
-      <form id="#form">
-  
-        <ion-item id="input">
-          <ion-label position="floating">Nome:</ion-label>
-          <ion-input type="text"></ion-input>
-         <!-- formControlName="nome" = vinculei com o ts-->
+  <ion-grid class="no-padding mg-top-30 form-bg-light">
+    <ion-row class="no-padding">
+      <ion-col col-12>
+        
+        <ion-item class="transparent-bg no-padding">
+          <ion-label position="floating" >Nome</ion-label>
+          <ion-input  ></ion-input>
         </ion-item>
-      
-        <ion-item id="input">
-          <ion-label position="floating" >E-mail:</ion-label>
-          <ion-input type="text" ></ion-input>
-         <!-- formControlName="nome" = vinculei com o ts-->
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="no-padding mg-top-20">
+      <ion-col col-6>
+       
+        <ion-item class="transparent-bg no-padding">
+          <ion-label position="floating" >CNPJ</ion-label>
+          <ion-input  ></ion-input>
         </ion-item>
-      
-        <ion-item id="input">
-          <ion-label position="floating">Telefone:</ion-label>
-          <ion-input type="text"></ion-input>
-         <!-- formControlName="nome" = vinculei com o ts-->
+      </ion-col>
+
+      <ion-col col-6>
+       
+        <ion-item class="transparent-bg no-padding">
+          <ion-label position="floating" >Telefone</ion-label>
+          <ion-input type="number" ></ion-input>
         </ion-item>
-      
-        <ion-item id="input">
-          <ion-label position="floating" >CPF:</ion-label>
-          <ion-input type="text" ></ion-input>
-         <!-- formControlName="nome" = vinculei com o ts-->
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="no-padding mg-top-20">
+      <ion-col col-12>
+        
+        <ion-item class="transparent-bg no-padding">
+          <ion-label position="floating" >Endereço</ion-label>
+          <ion-input ></ion-input>
         </ion-item>
-      
-        <ion-item id="input">
-          <ion-label position="floating">Endereço:</ion-label>
-          <ion-input type="text"></ion-input>
-         <!-- formControlName="nome" = vinculei com o ts-->
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="no-padding mg-top-20">
+      <ion-col col-12>
+        
+        <ion-item class="transparent-bg no-padding">
+          <ion-label position="floating" >E-mail</ion-label>
+          <ion-input type="email" ></ion-input>
         </ion-item>
-      
-        <ion-item id="input">
-          <ion-label position="floating" >Senha:</ion-label>
-          <ion-input type="password" ></ion-input>
-         <!-- formControlName="nome" = vinculei com o ts-->
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="no-padding mg-top-20">
+      <ion-col col-6>
+        
+        <ion-item class="transparent-bg no-padding">
+          <ion-label position="floating" >Senha</ion-label>
+          <ion-input  type="password"  ></ion-input>
         </ion-item>
-      
-        <ion-button id="button-atualizar" expand="block" shape="round">
-          Atualizar
-        </ion-button>
-       </form>
-  
-  </ion-card-content>
-  </ion-card>
+      </ion-col>
+
+      <ion-col col-6>
+       
+        <ion-item class="transparent-bg no-padding">
+          <ion-label position="floating" >Confirme Senha</ion-label>
+          <ion-input type="password"  ></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+
+    
+  </ion-grid>
+
+
+      <ion-button id="button-atualizar" expand="block" shape="round">
+        Atualizar
+      </ion-button>
+     </form>
+
+</ion-card-content>
 
 </ion-content>

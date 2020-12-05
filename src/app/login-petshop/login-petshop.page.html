@@ -4,7 +4,7 @@
 <ion-content id="content">
   <div id="header">
     
-    <img src="assets/icon/logo-teste3.png">
+    <img src="assets/icon/LogoOk.png">
   </div>
  
   <ion-card id=".slide">
@@ -14,18 +14,18 @@
   <form [formGroup]="formGroup">
  
    <ion-item>
-     <ion-label  position="floating"><ion-icon name="mail-outline" item-start></ion-icon>
+     <ion-label position="floating"><ion-icon name="mail-outline" item-start></ion-icon>
      E-mail
      </ion-label>
-     <ion-input formControlName="username" type="text"></ion-input>
+     <ion-input type="text" formControlName="username"></ion-input>
     <!-- formControlName="nome" = vinculei com o ts-->
    </ion-item>
  
    <ion-item >
-     <ion-label  position="floating" ><ion-icon name="key-outline" item-start></ion-icon>
+     <ion-label position="floating" ><ion-icon name="key-outline" item-start></ion-icon>
      Senha
      </ion-label>
-     <ion-input formControlName="password" type="password" ></ion-input>
+     <ion-input type="password" formControlName="password"></ion-input>
     <!-- formControlName="nome" = vinculei com o ts-->
    </ion-item>
  
@@ -35,9 +35,9 @@
    
   </form>
  
-   <p [routerLink]="['/cadastro-petshop']">Cadastre-se</p>
+   <p [routerLink]="['/cadastro-cliente']" routerDirection="forward">Cadastre-se</p>
  
-   <p [routerLink]="['/redefinir-senha']">Recuperar senha</p>
+   <p [routerLink]="['/redefinir-senha']" routerDirection="forward">Recuperar senha</p>
  
  </ion-card-content>
  </ion-card>

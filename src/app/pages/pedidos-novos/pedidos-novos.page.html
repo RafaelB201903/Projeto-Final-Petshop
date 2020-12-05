@@ -13,46 +13,87 @@
 
 
 
+
   <ion-card>
-    <ion-card-header>
-        <ion-card-title>Serviço</ion-card-title>
+
+    <ion-card-header color="primary">
+      <ion-card-title>Belinha</ion-card-title>
     </ion-card-header>
-  
-    <ion-card-content>
-      <img src="assets/icon/dog.png" style="width: 120px; padding-bottom: 5%;">
 
-      <p><strong>Nome:</strong> Fernanda</p>
-      <p><strong>Endereço:</strong> Rua Washigton n° 10</p>
-      <p><strong>Serviços:</strong> banho </p>
-      <p><strong>Porte:</strong> pequeno </p>
-      <p><strong>Sexo:</strong> macho </p>
-      <p><strong>Animal:</strong> cachorro </p>
-
-      <ion-button style="padding-top: 2%;">Confirmar</ion-button>
-      <ion-button id="botao-vermais" style="padding-top: 2%;" color="warning">Ver mais</ion-button>
-    </ion-card-content>
+    <ion-row class="no-padding mg-top-20">
+      <ion-col size="4">
+       
+       
+          <img class="img" src="assets/icon/dog.png">
+       
+      </ion-col>
   
+      <ion-col col-3>
+        
+
+
+       <ul style="list-style: none;">
+        <li><strong>Dono:</strong> Toddy</li>
+        <li><strong>Endereço:</strong> Rua das Amelias</li>
+        <li><strong>Serviço:</strong> Banho</li>
+        <li><strong>Especie:</strong> Cachorro</li>
+      </ul>
+        
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-button expand="full" style="padding-top: 2%;" color="success">Confirmar</ion-button>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-button expand="full"  style="padding-top: 2%;" color="warning" [routerLink]="['/ver-mais-pedido-novo']">Ver mais</ion-button>
+      </ion-col>
+
+    </ion-row>
+
   </ion-card>
 
   <ion-card>
-    <ion-card-header>
-        <ion-card-title>Serviço</ion-card-title>
+
+    <ion-card-header color="primary">
+      <ion-card-title>Ninha</ion-card-title>
     </ion-card-header>
-  
-    <ion-card-content>
-      <img src="assets/icon/gato-icone.png" style="width: 120px; padding-bottom: 5%;">
 
-      <p><strong>Nome:</strong> Leandro</p>
-      <p><strong>Endereço:</strong> Rua Vladimir n° 7</p>
-      <p><strong>Serviços:</strong> tosa </p>
-      <p><strong>Porte:</strong> medio </p>
-      <p><strong>Sexo:</strong> fêmea </p>
-      <p><strong>Animal:</strong> gato </p>
-
-      <ion-button style="padding-top: 2%;">Confirmar</ion-button>
-      <ion-button id="botao-vermais" style="padding-top: 2%;" color="warning">Ver mais</ion-button>
-    </ion-card-content>
+    <ion-row class="no-padding mg-top-20">
+      <ion-col size="4">
+       
+       
+          <img class="img" src="assets/icon/gato-icone.png">
+       
+      </ion-col>
   
+      <ion-col col-3>
+        
+
+
+       <ul style="list-style: none;">
+        <li><strong>Dono:</strong> Joana</li>
+        <li><strong>Endereço:</strong> Rua das Flores</li>
+        <li><strong>Serviço:</strong> Tosa</li>
+        <li><strong>Especie:</strong> Gato</li>
+      </ul>
+        
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-6>
+        <ion-button expand="full" style="padding-top: 2%;">Confirmar</ion-button>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-button expand="full"  style="padding-top: 2%;" color="warning" >Ver mais</ion-button>
+      </ion-col>
+
+    </ion-row>
+
   </ion-card>
 
 </ion-content>

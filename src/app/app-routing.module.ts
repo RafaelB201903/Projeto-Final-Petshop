@@ -56,6 +56,18 @@ const routes: Routes = [
     path: 'pedidos-finalizados',
     loadChildren: () => import('./pages/pedidos-finalizados/pedidos-finalizados.module').then( m => m.PedidosFinalizadosPageModule)
   },
+  {
+    path: 'ver-mais-pedido-novo',
+    loadChildren: () => import('./pages/ver-mais-pedido-novo/ver-mais-pedido-novo.module').then( m => m.VerMaisPedidoNovoPageModule)
+  },
+  {
+    path: 'ver-mais-pedido-em-andamento',
+    loadChildren: () => import('./pages/ver-mais-pedido-em-andamento/ver-mais-pedido-em-andamento.module').then( m => m.VerMaisPedidoEmAndamentoPageModule)
+  },
+  {
+    path: 'ver-mais-pedidos-finalizados',
+    loadChildren: () => import('./pages/ver-mais-pedidos-finalizados/ver-mais-pedidos-finalizados.module').then( m => m.VerMaisPedidosFinalizadosPageModule)
+  },
   
 ];
 
