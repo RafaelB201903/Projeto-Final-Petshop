@@ -34,7 +34,7 @@ export class LoginPetshopPage implements OnInit {
       this.auth.signInWithEmailAndPassword(user, pass).then(data => {
         load.dismiss();
         this.menuCtrl.enable(true);
-        this.navCtrl.navigateRoot(['home-petshop']);
+        this.navCtrl.navigateRoot(['/tabs/pedidos-novos']);
       }).catch(data => {
         load.dismiss();
         this.template.myAlert("Erro ao atenticar");

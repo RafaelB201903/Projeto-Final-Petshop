@@ -12,10 +12,7 @@ const routes: Routes = [
     path: 'login-petshop',
     loadChildren: () => import('./login-petshop/login-petshop.module').then( m => m.LoginPetshopPageModule)
   },
-  {
-    path: 'home-petshop',
-    loadChildren: () => import('./home-petshop/home-petshop.module').then( m => m.HomePetshopPageModule)
-  },
+ 
   {
     path: 'inicial-petshop',
     loadChildren: () => import('./inicial-petshop/inicial-petshop.module').then( m => m.InicialPetshopPageModule)

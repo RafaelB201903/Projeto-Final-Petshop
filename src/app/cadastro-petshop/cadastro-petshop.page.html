@@ -9,17 +9,17 @@
  
    <ion-item id="input">
      <ion-label position="floating" >E-mail:</ion-label>
-     <ion-input type="text" ></ion-input>
+     <ion-input type="text" #usuario></ion-input>
     <!-- formControlName="nome" = vinculei com o ts-->
    </ion-item>
  
    <ion-item id="input">
      <ion-label position="floating" >Senha:</ion-label>
-     <ion-input type="password" ></ion-input>
+     <ion-input type="password" #senha></ion-input>
     <!-- formControlName="nome" = vinculei com o ts-->
    </ion-item>
  
-   <ion-button  expand="block" shape="round">
+   <ion-button  expand="block" shape="round" (click)="cadastrar()">
      Cadastrar
    </ion-button>
   </form>
