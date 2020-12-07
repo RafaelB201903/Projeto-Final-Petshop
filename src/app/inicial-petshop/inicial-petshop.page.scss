@@ -56,7 +56,7 @@ ion-content {
 
 ion-content{
 //--background: #3dc2ff;
---background: linear-gradient(to right,#D4FA73 0%, #73FABE 100%);
+--background: linear-gradient(to right,#00994D 0%, #73FABE 100%);
 //teste 1  #D4FA73 0%, #73FABE
 //teste 2  #D4FA73 0%, #66DE86
 //teste 3  #92DE66 0%, #66DE86
@@ -64,8 +64,8 @@ ion-content{
 }
 
 ion-button {
-    --background: linear-gradient(to right,#92DE66 0%, #66DE86 100%);
-    color: #4F4F4F;
+    --background: linear-gradient(to right,#00994D 0%, #66DE86 100%);
+    color: #f1f1f1;
     //color: #f1f1f1;
 
     
@@ -79,7 +79,7 @@ p {
 text-align: center;
 padding-top: 2%;
 font-size: 14px;
-color:#4F4F4F;
+color: #f1f1f1;
 //color:  #f1f2f5;
 text-decoration: underline;
 

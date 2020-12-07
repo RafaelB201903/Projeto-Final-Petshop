@@ -65,22 +65,22 @@ ion-item{
 
 ion-content{
 //--background: #3dc2ff;
---background: linear-gradient(to right,#D4FA73 0%, #73FABE 100%);
+--background: linear-gradient(to right,#00994D 0%, #73FABE 100%);
 //teste 1  #D4FA73 0%, #73FABE
 //teste 2  #D4FA73 0%, #66DE86
 //teste 3  #92DE66 0%, #66DE86
 //
 
 ion-button {
-    --background: linear-gradient(to right,#92DE66 0%, #66DE86 100%);
-    color: #4F4F4F;
+    --background: linear-gradient(to right,#00994D 0%, #66DE86 100%);
+    color: #f1f1f1;
 }
 
 
    ion-card {
     position: fixed;
     width: 100%;
-    background: rgba(255,255,255,0.8);
+    background: rgba(255, 255, 255, 0.8);
     padding: 10% 0 100% 0px;
     border-radius: 28px 28px 0  0;
     

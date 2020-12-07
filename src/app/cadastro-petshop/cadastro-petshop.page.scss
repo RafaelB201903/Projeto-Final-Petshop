@@ -10,7 +10,7 @@ ion-toolbar {
 
 
 ion-content {
-    --background: linear-gradient(to right,#D4FA73 0%, #73FABE 100%);
+    --background: linear-gradient(to right,#00994D 0%, #73FABE 100%);
 
     #header {
         display: flex;
@@ -70,15 +70,15 @@ ion-item {
   }
 
   ion-button {
-    --background: linear-gradient(to right,#92DE66 0%, #66DE86 100%);
-    color: #4F4F4F;
+    --background: linear-gradient(to right,#00994D 0%, #66DE86 100%);
+    color: #f1f1f1;
 }
 
 p{
     font-size: 14px;
     color:inherit;
     text-align: center;
-    color: #4F4F4F;
+    color: #f1f1f1;
 
     text-align: center;
     padding-top: 1%;
