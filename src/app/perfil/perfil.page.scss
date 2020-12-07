@@ -64,3 +64,33 @@ font-size: 20px;
 ion-card-title {
   text-align: center;
 }
+
+.quadrado {
+  background: #00994D;
+  height: 100px;
+  padding:  4px 10px 50px 10px;
+  border-radius:  28px 28px 28px 28px;
+  display: block;
+  box-shadow: 1px 5px 5px 0px rgba(0, 0, 0, 0.3);
+        --box-shadow: none;
+}
+
+ion-icon {
+  padding-top:10px
+}
+
+
+ion-button {
+  height: 100px;
+  border-radius:  28px;
+  
+}
+
+
+.quadrado:hover {background-color: #3e8e41}
+
+.quadrado:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

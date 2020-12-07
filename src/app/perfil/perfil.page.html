@@ -11,11 +11,11 @@
 
 <ion-content>
 
-  <div class="area-perfil">
+    <div class="area-perfil">
     
     <ion-row>
       <ion-col col-3>
-        <p>Pedidos Aceito</p>
+        <p>Pedidos Aceitos</p>
         <p>2</p>
       </ion-col>
       <ion-col id="header" col-3>
@@ -29,10 +29,11 @@
     </ion-row>
   
       <ion-row id="header">
-        <h1>Fernando</h1>
+        <h1>Estrela Petshop</h1>
       </ion-row>
     </div>
 
+    <ion-card>
 
   <ion-card-header>
     <ion-card-title>Atualizar Informações</ion-card-title>
@@ -40,87 +41,41 @@
   </ion-card-header>
 
   <ion-card-content>
+
+    <ion-row>
+
+      <ion-col col-3>
+        <div class="quadrado" [routerLink]="['/atualizar-info']">
+          <ion-icon name="reader-outline"></ion-icon>
+          <p>Atualizar cadastro</p>
+        </div>
+      </ion-col>
+  
+      <ion-col col-3>
+        <div class="quadrado" [routerLink]="['/add-imagem']">
+          <ion-icon name="camera-outline"></ion-icon>
+          <p>Adicionar logo</p>
+        </div>
+      </ion-col>
+  
+      <ion-col col-3>
+         <div class="quadrado" [routerLink]="['/alt-senha']">
+           <ion-icon name="lock-closed-outline"></ion-icon>
+           <p>Alterar senha</p>
+          </div>
+      </ion-col>
+  
+    </ion-row>
    
-    <form id="#form">
+   
 
-     
-  <ion-grid class="no-padding mg-top-30 form-bg-light">
-    <ion-row class="no-padding">
-      <ion-col col-12>
-        
-        <ion-item class="transparent-bg no-padding">
-          <ion-label position="floating" >Nome</ion-label>
-          <ion-input  ></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+</ion-card-content>
 
-    <ion-row class="no-padding mg-top-20">
-      <ion-col col-6>
-       
-        <ion-item class="transparent-bg no-padding">
-          <ion-label position="floating" >CNPJ</ion-label>
-          <ion-input  ></ion-input>
-        </ion-item>
-      </ion-col>
 
-      <ion-col col-6>
-       
-        <ion-item class="transparent-bg no-padding">
-          <ion-label position="floating" >Telefone</ion-label>
-          <ion-input type="number" ></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
 
-    <ion-row class="no-padding mg-top-20">
-      <ion-col col-12>
-        
-        <ion-item class="transparent-bg no-padding">
-          <ion-label position="floating" >Endereço</ion-label>
-          <ion-input ></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-
-    <ion-row class="no-padding mg-top-20">
-      <ion-col col-12>
-        
-        <ion-item class="transparent-bg no-padding">
-          <ion-label position="floating" >E-mail</ion-label>
-          <ion-input type="email" ></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-
-    <ion-row class="no-padding mg-top-20">
-      <ion-col col-6>
-        
-        <ion-item class="transparent-bg no-padding">
-          <ion-label position="floating" >Senha</ion-label>
-          <ion-input  type="password"  ></ion-input>
-        </ion-item>
-      </ion-col>
-
-      <ion-col col-6>
-       
-        <ion-item class="transparent-bg no-padding">
-          <ion-label position="floating" >Confirme Senha</ion-label>
-          <ion-input type="password"  ></ion-input>
-        </ion-item>
-      </ion-col>
-    </ion-row>
+</ion-card>
 
 
     
-  </ion-grid>
-
-
-      <ion-button id="button-atualizar" expand="block" shape="round">
-        Atualizar
-      </ion-button>
-     </form>
-
-</ion-card-content>
 
 </ion-content>

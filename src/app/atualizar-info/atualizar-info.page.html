@@ -1,0 +1,90 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Atualizar cadastro</ion-title>
+    <ion-buttons slot="start" style="color:floralwhite">
+      <ion-button [routerLink]="['/perfil']" >
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+    <ion-card id="info">
+
+      <ion-text>Preencha os campos abaixo para atualizar seu cadastro. </ion-text>
+   
+     </ion-card>
+
+  <form id="form">
+
+     
+    <ion-grid class="no-padding mg-top-30 form-bg-light">
+      <ion-row class="no-padding">
+        <ion-col col-12>
+          
+          <ion-item class="transparent-bg no-padding">
+            <ion-label position="floating" >Nome</ion-label>
+            <ion-input  ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="no-padding mg-top-20">
+        <ion-col col-6>
+         
+          <ion-item class="transparent-bg no-padding">
+            <ion-label position="floating" >CNPJ</ion-label>
+            <ion-input  ></ion-input>
+          </ion-item>
+        </ion-col>
+  
+        <ion-col col-6>
+         
+          <ion-item class="transparent-bg no-padding">
+            <ion-label position="floating" >Telefone</ion-label>
+            <ion-input type="number" ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="no-padding mg-top-20">
+        <ion-col col-12>
+          
+          <ion-item class="transparent-bg no-padding">
+            <ion-label position="floating" >Endereço</ion-label>
+            <ion-input ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="no-padding mg-top-20">
+        <ion-col col-12>
+          
+          <ion-item class="transparent-bg no-padding">
+            <ion-label position="floating" >E-mail</ion-label>
+            <ion-input type="email" ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      
+  
+  
+      
+    </ion-grid>
+  
+   
+  
+        <ion-button id="button-atualizar" expand="block" shape="round">
+          Atualizar
+        </ion-button>
+        
+       </form>
+
+       </ion-card>
+
+</ion-content>

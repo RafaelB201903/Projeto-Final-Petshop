@@ -68,6 +68,18 @@ const routes: Routes = [
     path: 'ver-mais-pedidos-finalizados',
     loadChildren: () => import('./pages/ver-mais-pedidos-finalizados/ver-mais-pedidos-finalizados.module').then( m => m.VerMaisPedidosFinalizadosPageModule)
   },
+  {
+    path: 'atualizar-info',
+    loadChildren: () => import('./atualizar-info/atualizar-info.module').then( m => m.AtualizarInfoPageModule)
+  },
+  {
+    path: 'add-imagem',
+    loadChildren: () => import('./add-imagem/add-imagem.module').then( m => m.AddImagemPageModule)
+  },
+  {
+    path: 'alt-senha',
+    loadChildren: () => import('./alt-senha/alt-senha.module').then( m => m.AltSenhaPageModule)
+  },
   
 ];
 

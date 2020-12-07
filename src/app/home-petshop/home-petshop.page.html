@@ -14,15 +14,18 @@
  
 
   <ion-card>
+
+    <img src="assets/imagens/47396.jpg">
+
     <ion-card-header>
       <ion-card-title>Verificar pedidos novos</ion-card-title>
     </ion-card-header>
   
     <ion-card-content>
-      Clique no botão abaixo para verificar se algum clientes solicitou um pedido
+      Clique no botão abaixo para verificar se algum cliente solicitou um pedido
     </ion-card-content>
       
-    <ion-button (click)="goPage()" expand="block">Pedidos novos</ion-button>
+    <ion-button [routerLink]="['/tabs/pedidos-novos']" expand="block">Pedidos novos</ion-button>
  
   </ion-card>
   

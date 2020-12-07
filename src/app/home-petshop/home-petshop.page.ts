@@ -19,15 +19,8 @@ export class HomePetshopPage implements OnInit {
   ngOnInit() {
   }
 
-  goPage() {
-    this.router.navigate(['/pedidos-novos'])
-  }
+  
 
-  logout(){
-    this.auth.signOut().then(data=>{
-      this.menuCtrl.enable(false);
-      this.navCtrl.navigateRoot(['/login-petshop']);
-    })
-  }
+
 
 }
