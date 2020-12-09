@@ -22,3 +22,29 @@ ion-toolbar{
     rgba(0, 0, 0, 0.14) 0px 2px 20px 6px, 
     rgba(0, 0, 0, 0.12) 0px 1px 20px -30px;  
     }
+
+    h1 {
+      text-align: center;
+      color: black;
+      margin-top: 15px;
+      margin-bottom: 8px;
+    }
+
+    ion-col > #nome {
+      color: black;
+      background-color: #f7f7f7;
+      border: solid 1px #ddd;
+      padding: 10px;
+    
+    }
+    
+    #valor {
+      color: black;
+      background-color: #f7f7f7;
+      border: solid 1px #ddd;
+    
+    }
+    
+    ion-grid {
+      margin-bottom: 20px;
+    }
