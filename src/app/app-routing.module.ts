@@ -76,7 +76,11 @@ const routes: Routes = [
   {
     path: 'alt-senha',
     loadChildren: () => import('./alt-senha/alt-senha.module').then( m => m.AltSenhaPageModule)
+  },  {
+    path: 'confirmar-pedido',
+    loadChildren: () => import('./pages/confirmar-pedido/confirmar-pedido.module').then( m => m.ConfirmarPedidoPageModule)
   },
+
   
 ];
 
