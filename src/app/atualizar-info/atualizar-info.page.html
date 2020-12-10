@@ -20,95 +20,120 @@
      </ion-card>
 
   <form id="form">
-
+    <h2>Informações Pessoais</h2>
      
     <ion-grid class="no-padding mg-top-30 form-bg-light">
       <ion-row class="no-padding">
         <ion-col col-12>
           
           <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >Nome:</ion-label>
+            <ion-label position="floating" >Nome completo</ion-label>
             <ion-input  ></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
   
       <ion-row class="no-padding mg-top-20">
-        <ion-col col-6>
+        <ion-col col-12>
          
           <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >CNPJ:</ion-label>
-            <ion-input  ></ion-input>
+            <ion-label position="floating" >CPF</ion-label>
+            <ion-input  type="text"></ion-input>
           </ion-item>
         </ion-col>
-  
-        <ion-col col-6>
+      </ion-row>
+
+      <h2>Informações de Contato</h2>
+
+      <ion-row class="no-padding mg-top-20">
+        <ion-col col-12>
          
           <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >Telefone:</ion-label>
+            <ion-label position="floating" >Telefone</ion-label>
             <ion-input type="number" ></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
-  
+
       <ion-row class="no-padding mg-top-20">
         <ion-col col-12>
           
           <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >Endereço:</ion-label>
-            <ion-input ></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="no-padding mg-top-20">
-        <ion-col col-6>
-
-          <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >Bairro:</ion-label>
-            <ion-input  ></ion-input>
-          </ion-item>
-        </ion-col>
-
-        <ion-col col-6>
-
-          <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >Cidade:</ion-label>
-            <ion-input type="text" ></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-  
-      <ion-row class="no-padding mg-top-20">
-        <ion-col col-12>
-          
-          <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >E-mail:</ion-label>
+            <ion-label position="floating" >E-mail</ion-label>
             <ion-input type="email" ></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
 
-      <ion-row class="no-padding mg-top-20">
-        <ion-col col-6>
+      <h2>Informações de Localização</h2>
 
+      
+
+      <ion-row class="no-padding mg-top-20">
+        <ion-col col-12>
+         
+          
           <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >Estado:</ion-label>
-            <ion-input  ></ion-input>
+            <ion-label position="floating" >Cidade</ion-label>
+            <ion-input type="text"></ion-input>
           </ion-item>
         </ion-col>
+      </ion-row>
 
-        <ion-col col-6>
-
+      <ion-row class="no-padding mg-top-20">
+        <ion-col col-12>
+         
           <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >CEP:</ion-label>
-            <ion-input type="number" ></ion-input>
+            <ion-label position="floating" >Bairro</ion-label>
+            <ion-input  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
+      <ion-row class="no-padding mg-top-20">
+        <ion-col col-12>
+          
+          <ion-item class="transparent-bg no-padding">
+            <ion-label position="floating" >Endereço</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="no-padding mg-top-20">
+        <ion-col col-12>
+          
+          <ion-item class="transparent-bg no-padding">
+            <ion-label position="floating" >N° da casa</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="no-padding mg-top-20">
+        <ion-col col-12>
+          
+          <ion-item class="transparent-bg no-padding">
+            <ion-label position="floating" >Complemento</ion-label>
+            <ion-input type="text"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
 
       
+  
+      <ion-row class="no-padding mg-top-20">
+        <ion-col col-12>
+         
+          <ion-item class="transparent-bg no-padding">
+            <ion-label position="floating" >CEP</ion-label>
+            <ion-input type="number" ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+  
     </ion-grid>
+
 
     <h1>Adicionar Preços</h1>
 
@@ -145,7 +170,6 @@
 
     </ion-grid>
   
-   
   
         <ion-button id="button-atualizar" expand="block" shape="round">
           Atualizar
@@ -154,5 +178,7 @@
        </form>
 
        </ion-card>
+
+
 
 </ion-content>
