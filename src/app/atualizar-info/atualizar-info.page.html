@@ -19,7 +19,7 @@
    
      </ion-card>
 
-  <form id="form">
+  <form [formGroup]="formGroup">
     <h2>Informações Pessoais</h2>
      
     <ion-grid class="no-padding mg-top-30 form-bg-light">
@@ -27,8 +27,8 @@
         <ion-col col-12>
           
           <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >Nome completo</ion-label>
-            <ion-input  ></ion-input>
+            <ion-label position="floating">Nome completo</ion-label>
+            <ion-input formControlName="nome"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -38,7 +38,7 @@
          
           <ion-item class="transparent-bg no-padding">
             <ion-label position="floating" >CPF</ion-label>
-            <ion-input  type="text"></ion-input>
+            <ion-input  type="text" formControlName="cpf"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -50,17 +50,7 @@
          
           <ion-item class="transparent-bg no-padding">
             <ion-label position="floating" >Telefone</ion-label>
-            <ion-input type="number" ></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row class="no-padding mg-top-20">
-        <ion-col col-12>
-          
-          <ion-item class="transparent-bg no-padding">
-            <ion-label position="floating" >E-mail</ion-label>
-            <ion-input type="email" ></ion-input>
+            <ion-input type="number" formControlName="telefone"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -75,7 +65,7 @@
           
           <ion-item class="transparent-bg no-padding">
             <ion-label position="floating" >Cidade</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" formControlName="cidade"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -85,7 +75,7 @@
          
           <ion-item class="transparent-bg no-padding">
             <ion-label position="floating" >Bairro</ion-label>
-            <ion-input  type="text"></ion-input>
+            <ion-input  type="text" formControlName="bairro"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -95,7 +85,7 @@
           
           <ion-item class="transparent-bg no-padding">
             <ion-label position="floating" >Endereço</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" formControlName="endereco"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -105,7 +95,7 @@
           
           <ion-item class="transparent-bg no-padding">
             <ion-label position="floating" >N° da casa</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" formControlName="ncasa"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -115,7 +105,7 @@
           
           <ion-item class="transparent-bg no-padding">
             <ion-label position="floating" >Complemento</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" formControlName="complemento"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -127,7 +117,7 @@
          
           <ion-item class="transparent-bg no-padding">
             <ion-label position="floating" >CEP</ion-label>
-            <ion-input type="number" ></ion-input>
+            <ion-input type="number" formControlName="cep"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -143,7 +133,7 @@
       <ion-col col-6>
         <ion-item>
           <ion-label>1° Serviço</ion-label>
-          <ion-select >
+          <ion-select formControlName="servico1">
             <ion-select-option value="tosa">tosa</ion-select-option>
             <ion-select-option value="banho">banho</ion-select-option>
             <ion-select-option value="banho e tosa">banho e tosa</ion-select-option>
@@ -152,13 +142,13 @@
         </ion-col>
 
         <ion-col col-6>
-          <div id="valor"><ion-input placeholder="ex: 20,00" ></ion-input></div>
+          <div id="valor"><ion-input formControlName="preco1" placeholder="ex: 20,00" ></ion-input></div>
         </ion-col>
 
         <ion-col col-6>
           <ion-item>
             <ion-label>2° Serviço</ion-label>
-            <ion-select >
+            <ion-select formControlName="servico2">
               <ion-select-option value="tosa">tosa</ion-select-option>
               <ion-select-option value="banho">banho</ion-select-option>
               <ion-select-option value="banho e tosa">banho e tosa</ion-select-option>
@@ -167,13 +157,13 @@
         </ion-col>
 
         <ion-col col-6 >
-          <div id="valor"><ion-input placeholder="ex: 20,00" ></ion-input></div>
+          <div id="valor"><ion-input formControlName="preco2" placeholder="ex: 20,00" ></ion-input></div>
         </ion-col>
 
         <ion-col col-6>
           <ion-item>
             <ion-label>3° Serviço</ion-label>
-            <ion-select >
+            <ion-select formControlName="servico3">
               <ion-select-option value="tosa">tosa</ion-select-option>
               <ion-select-option value="banho">banho</ion-select-option>
               <ion-select-option value="banho e tosa">banho e tosa</ion-select-option>
@@ -182,13 +172,13 @@
         </ion-col>
 
         <ion-col col-6 >
-          <div id="valor"><ion-input placeholder="ex: 20,00" ></ion-input></div>
+          <div id="valor"><ion-input formControlName="preco3" placeholder="ex: 20,00" ></ion-input></div>
         </ion-col>
 
     </ion-grid>
   
   
-        <ion-button id="button-atualizar" expand="block" shape="round">
+        <ion-button (click)="atualizar()" id="button-atualizar" expand="block" shape="round">
           Atualizar
         </ion-button>
         
