@@ -2,7 +2,7 @@ export class Cliente{
 
     id:string;
     nome:string;
-    cpf:string;
+    cnpj:string;
     telefone:string;
     cidade:string;
     bairro:string;
@@ -22,7 +22,7 @@ export class Cliente{
 
     setData(objFirebase : any){
         this.nome = objFirebase.nome;
-        this.cpf = objFirebase.cpf;
+        this.cnpj = objFirebase.cnpj;
         this.telefone = objFirebase.telefone;
         this.cidade = objFirebase.cidade;
         this.bairro = objFirebase.bairro;

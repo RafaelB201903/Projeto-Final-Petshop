@@ -43,7 +43,7 @@ export class AtualizarInfoPage implements OnInit {
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
       nome: [this.perfil.nome],
-      cpf: [this.perfil.cpf],
+      cnpj: [this.perfil.cnpj],
       telefone: [this.perfil.telefone],
       complemento: [this.perfil.complemento],
       cep: [this.perfil.cep],
