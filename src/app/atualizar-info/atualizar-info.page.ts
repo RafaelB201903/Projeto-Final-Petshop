@@ -50,10 +50,13 @@ export class AtualizarInfoPage implements OnInit {
       cidade: [this.perfil.cidade],
       bairro: [this.perfil.bairro],
       endereco: [this.perfil.endereco],
-      ncasa: [this.perfil.ncasa],
+      ncomercio: [this.perfil.ncomercio],
       servico1: [this.perfil.servico1],
+      preco1: [this.perfil.preco1],
       servico2: [this.perfil.servico2],
-      servico3: [this.perfil.servico3]
+      preco2: [this.perfil.preco2],
+      servico3: [this.perfil.servico3],
+      preco3: [this.perfil.preco3],
 
     })
   }

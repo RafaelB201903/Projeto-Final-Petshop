@@ -7,7 +7,7 @@ export class Cliente{
     cidade:string;
     bairro:string;
     endereco:string;
-    ncasa:string;
+    ncomercio:string;
     complemento:string;
     cep:string;
     servico1:string;
@@ -27,7 +27,7 @@ export class Cliente{
         this.cidade = objFirebase.cidade;
         this.bairro = objFirebase.bairro;
         this.endereco = objFirebase.endereco;
-        this.ncasa = objFirebase.ncasa;
+        this.ncomercio = objFirebase.ncomercio;
         this.cep = objFirebase.cep;
         this.servico1 = objFirebase.servico1;
         this.servico2 = objFirebase.servico2;
