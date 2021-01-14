@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClienteService } from './services/cliente.service';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ClienteService } from './services/cliente.service';
     AngularFireModule.initializeApp(environment.firebase),
     HttpClientModule,
     AngularFirestoreModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireStorageModule 
   ],
   providers: [
     StatusBar,
