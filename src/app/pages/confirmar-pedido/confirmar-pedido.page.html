@@ -15,7 +15,7 @@
 <ion-content>
 
   <img src="assets/icon/dog.png" alt="">
-  <h1>Belinha</h1>
+  <h1>{{pedido.pet}}</h1>
   <p>Rua das montanhas n°1230</p>
 
   <ion-card>
@@ -30,35 +30,36 @@
 
 </ion-card>
 
-  <form>
+<form [formGroup]="formGroup">
 
     <ion-item>
       <ion-label>Data sugerida:</ion-label>
-      <ion-input disabled value="12/09/2020" type="date" ></ion-input>
+      <ion-input disabled value="{{pedido.data_sugerido}}" type="date" ></ion-input>
     </ion-item>
 
 
     <ion-item>
       <ion-label>Horário sugerido:</ion-label>
-      <ion-input type="time" disabled value="18:30" ></ion-input>
+      <ion-input type="time" disabled value="{{pedido.horario_sugerido}}" ></ion-input>
     </ion-item>
 
 
     <ion-item>
       <ion-label>Horario da coleta:</ion-label>
-      <ion-input type="time" value="18:30" ></ion-input>
+      <ion-input type="time" formControlName="horario_coleta" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Horario de entrega</ion-label>
-      <ion-input type="time" ></ion-input>
+      <ion-input type="time" formControlName="horario_entrega" ></ion-input>
     </ion-item>
-
+    
+  </form>
 
     <br>
 
-    <ion-button  expand="block">Confirmar</ion-button>
+    <ion-button  expand="block" (click)="atualizar()">Confirmar</ion-button>
    
-  </form>
+  
 
 </ion-content>

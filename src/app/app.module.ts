@@ -1,3 +1,6 @@
+import { PetshopService } from './services/petshop.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PedidoService } from './services/pedido.service';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { NgModule } from '@angular/core';
@@ -30,7 +33,10 @@ import { ClienteService } from './services/cliente.service';
   providers: [
     StatusBar,
     SplashScreen,
+    PetshopService,
     ClienteService,
+    PedidoService,
+    
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

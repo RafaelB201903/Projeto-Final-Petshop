@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ClienteService } from '../services/cliente.service';
+import { PetshopService } from '../services/petshop.service';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Cliente } from '../model/cliente';
+import { Petshop } from '../model/petshop';
 
 @Component({
   selector: 'app-atualizar-info',
@@ -12,10 +12,10 @@ import { Cliente } from '../model/cliente';
 export class AtualizarInfoPage implements OnInit {
 
   formGroup: FormGroup;
-  perfil : Cliente = new Cliente(); // Declarar a classe onde se encontra dados do perfil
+  perfil : Petshop = new Petshop(); // Declarar a classe onde se encontra dados do perfil
   
   constructor(private formBuilder : FormBuilder, 
-    private clienteServ : ClienteService,
+    private petshopServ : PetshopService,
     private auth : AngularFireAuth) { // AngularFireAuth -> pegar dados do usuario logado
     
       this.iniciarForm(); // obrigatório inicializar o formulário
@@ -25,7 +25,7 @@ export class AtualizarInfoPage implements OnInit {
         console.log(response)
 
 
-        this.clienteServ.buscaPerfilPorId(response.uid).subscribe(response=>{
+        this.petshopServ.buscaPerfilPorId(response.uid).subscribe(response=>{
           // se houver o perfil, colocar os dados para a variavel perfil
           this.perfil = response; // dados preenchidos
           this.iniciarForm(); // atualizar os dados do formulário
@@ -66,7 +66,7 @@ export class AtualizarInfoPage implements OnInit {
     this.auth.currentUser.then(response=>{ // auth.currentUser -> Obten dados do usuario
       // envio uid -> idUsuário
       // this.formGroup.value -> Dados preenchidos nos campos
-      this.clienteServ.atualizaPerfil(response.uid,this.formGroup.value).subscribe(response=>{
+      this.petshopServ.atualizaPerfil(response.uid,this.formGroup.value).subscribe(response=>{
         console.log(response);
         console.log(this.formGroup.value)
       })

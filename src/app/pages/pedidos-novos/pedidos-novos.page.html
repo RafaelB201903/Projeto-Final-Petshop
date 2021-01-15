@@ -9,7 +9,7 @@
 
 
 
-  <ion-card>
+  <ion-card *ngFor="let pedido of lista">
 
     
 
@@ -23,14 +23,14 @@
   
       <ion-col col-3>
         
-
        
+       {{pedido.id}}
        <ul style="list-style: none;">
-        <h3>Belinha</h3>
-        <li><ion-icon name="person-outline"></ion-icon> Toddy</li>
-        <li><ion-icon name="location-outline"></ion-icon> Rua das Amelias</li>
-        <li><ion-icon name="clipboard-outline"></ion-icon> Banho</li>
-        <li><ion-icon name="paw-outline"></ion-icon> Cachorro</li>
+        <h3>{{pedido.pet}}</h3>
+        <li><ion-icon name="person-outline"></ion-icon> </li>
+        <li><ion-icon name="location-outline"></ion-icon> </li>
+        <li><ion-icon name="clipboard-outline"></ion-icon>{{pedido.servico}}</li>
+        <li><ion-icon name="paw-outline"></ion-icon> </li>
       </ul>
         
       </ion-col>
@@ -38,18 +38,18 @@
 
     <ion-row>
       <ion-col col-6>
-        <ion-button shape="round" expand="full" style="padding-top: 2%;" [routerLink]="['/confirmar-pedido']">Confirmar</ion-button>
+        <ion-button shape="round" expand="full" style="padding-top: 2%;" (click)="visualizar2(pedido)">Confirmar</ion-button>
       </ion-col>
 
       <ion-col col-6>
-        <ion-button shape="round" expand="full"  style="padding-top: 2%;" color="warning" [routerLink]="['/ver-mais-pedido-novo']">Ver mais</ion-button>
+        <ion-button shape="round" expand="full"  style="padding-top: 2%;" color="warning" (click)="visualizar(pedido)">Ver mais</ion-button>
       </ion-col>
 
     </ion-row>
 
   </ion-card>
 
-  <ion-card>
+  <!--<ion-card>
 
     
 
@@ -87,6 +87,6 @@
 
     </ion-row>
 
-  </ion-card>
+  </ion-card>-->
 
 </ion-content>
