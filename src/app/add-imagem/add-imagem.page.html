@@ -27,11 +27,10 @@
   <img src="assets/icon/icon-user.png" alt="">
 </ion-row>
 
-  <ion-row>
-    <ion-col col-12>
-      <ion-button expand="full" shape="round" color="warning">Adicionar</ion-button>
-    </ion-col>
-  </ion-row>
+<ion-item>
+  <input type="file" (change)="enviarArquivo($event)" />
+</ion-item>
+
   </ion-card>
 
 
