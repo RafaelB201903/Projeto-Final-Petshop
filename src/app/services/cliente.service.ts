@@ -12,16 +12,16 @@ export class ClienteService {
 
 
 //vai puxar as informações do perfil do petshop especifico //perfil
-clientePorId(idcliente): Observable<any> {
+clientePorId(id2): Observable<any> {
 
       
     return from(new Observable(observe => { 
 
-        this.firestore.collection('perfil-cliente').doc(idcliente).snapshotChanges().subscribe(response => {
+        this.firestore.collection('perfil-cliente').doc(id2).snapshotChanges().subscribe(response => {
             
             let cliente: Cliente = new Cliente();
             cliente.setData(response.payload.data())
-            console.log("id" +idcliente);
+            console.log("id" +id2);
             console.log(response.payload.data());
             observe.next(cliente);
         })
