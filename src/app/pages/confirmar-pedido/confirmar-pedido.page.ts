@@ -26,7 +26,8 @@ export class ConfirmarPedidoPage implements OnInit {
     private auth : AngularFireAuth,
     private route: ActivatedRoute,
     private formBuilder : FormBuilder,
-    private template : TemplateService) {
+    private template : TemplateService,
+    ) {
 
       this.route.paramMap.subscribe(url=>{
 
@@ -54,24 +55,15 @@ export class ConfirmarPedidoPage implements OnInit {
   ngOnInit() {
   }
 
+ 
+
   atualizar(){
-    this.pedidoService.atualizarPedido(this.formGroup.value).subscribe(response => {
-        
-      console.log("Atualizado com sucesso");
-
-      ;//janelinha de carregamento
-      this.template.myAlert(response);//response lá do service
-      //
-      //this.navCtrl.navigateBack(['/info-vacinas',this.idpet])
-      
-    },erro => {
-      console.log("Erro")
-
     
-      this.template.myAlert("Erro ao Cadastrar");
-    })
-
-
+      this.pedidoService.atualizarPedido(this.idpedido,this.formGroup.value).subscribe(response=>{
+        console.log(response);
+        console.log(this.formGroup.value)
+      })
+   
   }
   
 
@@ -79,9 +71,19 @@ export class ConfirmarPedidoPage implements OnInit {
     this.formGroup = this.formBuilder.group({
       //aqui dentr vou colocar os campos do formulario
       // campos que preciso no cadastro, id gerado de forma automatica
+     
+      idcliente: [this.pedido.idcliente],
+      idpetshop: [this.pedido.idpetshop],
+      servico:[this.pedido.servico],
+      pet:[this.pedido.pet],
+      data_sugerido:[this.pedido.data_sugerido],
+      horario_sugerido:[this.pedido.horario_sugerido],
+     
+      
       horario_coleta : [],
       horario_entrega: [],
       status:[this.status],
+      
 
       
      

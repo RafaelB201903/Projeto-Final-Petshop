@@ -1,8 +1,12 @@
+import { ClienteService } from './../../services/cliente.service';
+import { PetService } from './../../services/pet.service';
 import { PedidoService } from './../../services/pedido.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Pedido } from 'src/app/model/pedidos';
+import { Pet } from 'src/app/model/pet';
+import { Cliente } from 'src/app/model/cliente';
 
 @Component({
   selector: 'app-pedidos-novos',
@@ -14,29 +18,39 @@ export class PedidosNovosPage implements OnInit {
   lista : Pedido[] = [];
   id : string = "";
 
+  pet: Pet = new Pet();
+  cliente: Cliente = new Cliente();
+  idpedido: string = "";
+  pedido : Pedido = new Pedido();
+  idcliente: string ="";
+  id2: string = "";
+  idpet: string = "";
+  id3: string = "";
+
   constructor(private pedidoService : PedidoService,
     private navCtrl : NavController,
-    private auth : AngularFireAuth) {
+    private auth : AngularFireAuth,
+    private PetService : PetService,
+    private ClienteService : ClienteService
+    ) {
 
       this.auth.currentUser.then(response=>{ // auth.currentUser -> Obten dados do usuario  
         this.id = response.uid;
         console.log(response.uid)
-      this.pedidoService.listaDeInfoPedidos(response.uid).subscribe(response => {
-        //this.clienteServ.listaDeClientes() -> chamei a lista de clientes 
-        //o ListaDeClientes é um OBSERVABLE dessa forma retorna um subscribe
-        //Esse é o comando que irá aguardar a resposta do servidor
-  
-        //se o servidor responder ele fazer isso aqui
-        console.log(response);//isso serve para ver se o problema é aqui, se houver algum erro aparecera aq
-        //solicitando uma resposta do servidor
+      this.pedidoService.listaDePedidoPorStatus(response.uid,"novo").subscribe(response => {
+       
+        console.log(response);
+        
         this.lista = response;
         console.log(this.lista);
-  
+        
         
       }, err=> {
         //o lista de cliente retorna observable 
       })
     })
+
+    
 
 
     }

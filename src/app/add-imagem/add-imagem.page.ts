@@ -4,7 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LoadingController } from '@ionic/angular';
 import { ClienteService } from '../services/cliente.service';
-import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { Cliente } from '../model/cliente';
 
 @Component({
@@ -14,10 +14,10 @@ import { Cliente } from '../model/cliente';
 })
 export class AddImagemPage implements OnInit {
 
-  imagem: any; //armazenada a imagem
+  
   idUser: any = "";
   formGroup: FormGroup;
-  addimagem: Cliente = new Cliente();
+  cliente: Cliente = new Cliente();
 
 
 
@@ -26,7 +26,7 @@ export class AddImagemPage implements OnInit {
     private auth: AngularFireAuth,
     private db: AngularFirestore,
     private loadingController: LoadingController,
-    public fireStorage: AngularFireStorageModule) {
+    public storage: AngularFireStorage) {
 
       this.iniciarForm();
       this.auth.authState.subscribe(response=>{
@@ -45,46 +45,40 @@ export class AddImagemPage implements OnInit {
 
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
-      nome: [this.addimagem.nome],
-      cnpj: [this.addimagem.cnpj],
-      telefone: [this.addimagem.telefone],
-      complemento: [this.addimagem.complemento],
-      cep: [this.addimagem.cep],
-      cidade: [this.addimagem.cidade],
-      bairro: [this.addimagem.bairro],
-      endereco: [this.addimagem.endereco],
-      ncomercio: [this.addimagem.ncomercio],
-      servico1: [this.addimagem.servico1],
-      preco1: [this.addimagem.preco1],
-      servico2: [this.addimagem.servico2],
-      preco2: [this.addimagem.preco2],
-      servico3: [this.addimagem.servico3],
-      preco3: [this.addimagem.preco3],
+      nome: [this.cliente.nome],
+     
+      telefone: [this.cliente.telefone],
+      complemento: [this.cliente.complemento],
+      cep: [this.cliente.cep],
+      cidade: [this.cliente.cidade],
+      bairro: [this.cliente.bairro],
+      endereco: [this.cliente.endereco],
+      
 
     })
   }
   enviarArquivo(event){
     //Capturando a imagem atravás do input type file (html)
-    this.imagem = event.srcElement.files[0];
+    let img = event.srcElement.files[0];
     //Enviar para o Storage
-    this.uploadStorage();
+    this.storage.storage.ref().child(`addimagem/${this.idUser}.jpg`).put(img).then(response=>{
+         
+        this.dowloadImage();
+
+      });
     }
     
-    uploadStorage(){
-      //Enviar ao firebase
-      //this.fireStorage.storage.ref().child(`addimagem/${this.idUser}.jpg`).put(this.imagem).then(response=>{
-         
-        //console.log("imagerm enviada com sucesso");
-
-      //});
-      
-      
-      }
+    
 
       dowloadImage(){
 
-        //this.fireStorage.storage.ref().child(`addimagem/${this.idUser}.jpg`).getDownloadURL().then(response=>{
-         // this.imagem = response;
+        this.storage.storage.ref().child(`addimagem/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+          this.cliente.imagem = response;
+        }).catch(response=>{
+          this.storage.storage.ref().child(`addimagem/perfil2.jpg`).getDownloadURL().then(response=>{
+            this.cliente.imagem = response;
+          })
+        })
 
      }
 

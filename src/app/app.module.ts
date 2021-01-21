@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClienteService } from './services/cliente.service';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { PetService } from './services/pet.service';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     SplashScreen,
     PetshopService,
     ClienteService,
+    PetService,
     PedidoService,
     
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

@@ -8,7 +8,7 @@ export class Pedido{
     idpet: string;
     idpetshop:string;
     horario_coleta : string;
-      horario_entrega:string ;
+    horario_entrega:string ;
 
     setData(objFirebase : any){
 
