@@ -4,8 +4,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LoadingController } from '@ionic/angular';
 import { ClienteService } from '../services/cliente.service';
-import { AngularFireStorageModule } from '@angular/fire/storage';
 import { Cliente } from '../model/cliente';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-add-imagem',
@@ -26,7 +26,7 @@ export class AddImagemPage implements OnInit {
     private auth: AngularFireAuth,
     private db: AngularFirestore,
     private loadingController: LoadingController,
-    public fireStorage: AngularFireStorageModule) {
+    public storage: AngularFireStorage) {
 
       this.iniciarForm();
       this.auth.authState.subscribe(response=>{
@@ -46,20 +46,13 @@ export class AddImagemPage implements OnInit {
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
       nome: [this.addimagem.nome],
-      cnpj: [this.addimagem.cnpj],
-      telefone: [this.addimagem.telefone],
+       telefone: [this.addimagem.telefone],
       complemento: [this.addimagem.complemento],
       cep: [this.addimagem.cep],
       cidade: [this.addimagem.cidade],
       bairro: [this.addimagem.bairro],
       endereco: [this.addimagem.endereco],
-      ncomercio: [this.addimagem.ncomercio],
-      servico1: [this.addimagem.servico1],
-      preco1: [this.addimagem.preco1],
-      servico2: [this.addimagem.servico2],
-      preco2: [this.addimagem.preco2],
-      servico3: [this.addimagem.servico3],
-      preco3: [this.addimagem.preco3],
+      
 
     })
   }
@@ -72,20 +65,23 @@ export class AddImagemPage implements OnInit {
     
     uploadStorage(){
       //Enviar ao firebase
-      //this.fireStorage.storage.ref().child(`addimagem/${this.idUser}.jpg`).put(this.imagem).then(response=>{
+      this.storage.storage.ref().child(`perfil_petshop/${this.idUser}.jpg`).put(this.imagem).then(response=>{
          
-        //console.log("imagerm enviada com sucesso");
+        console.log("imagerm enviada com sucesso");
 
-      //});
-      
+      });
+    
       
       }
 
       dowloadImage(){
 
-        //this.fireStorage.storage.ref().child(`addimagem/${this.idUser}.jpg`).getDownloadURL().then(response=>{
-         // this.imagem = response;
+        this.storage.storage.ref().child(`perfil_petshop/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+          this.imagem = response;
 
-     }
+     });
+    }
+
+    
 
 }
