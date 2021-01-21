@@ -14,10 +14,10 @@ import { AngularFireStorage } from '@angular/fire/storage';
 })
 export class AddImagemPage implements OnInit {
 
-  imagem: any; //armazenada a imagem
+  
   idUser: any = "";
   formGroup: FormGroup;
-  addimagem: Cliente = new Cliente();
+  cliente: Cliente = new Cliente();
 
 
 
@@ -37,7 +37,6 @@ export class AddImagemPage implements OnInit {
   
 }
 
-  
      
 
   ngOnInit() {
@@ -45,41 +44,46 @@ export class AddImagemPage implements OnInit {
 
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
-      nome: [this.addimagem.nome],
-       telefone: [this.addimagem.telefone],
-      complemento: [this.addimagem.complemento],
-      cep: [this.addimagem.cep],
-      cidade: [this.addimagem.cidade],
-      bairro: [this.addimagem.bairro],
-      endereco: [this.addimagem.endereco],
+
+      nome: [this.cliente.nome],
+     
+      telefone: [this.cliente.telefone],
+      complemento: [this.cliente.complemento],
+      cep: [this.cliente.cep],
+      cidade: [this.cliente.cidade],
+      bairro: [this.cliente.bairro],
+      endereco: [this.cliente.endereco],
+
       
 
     })
   }
   enviarArquivo(event){
     //Capturando a imagem atravás do input type file (html)
-    this.imagem = event.srcElement.files[0];
+    let img = event.srcElement.files[0];
     //Enviar para o Storage
-    this.uploadStorage();
-    }
-    
-    uploadStorage(){
-      //Enviar ao firebase
-      this.storage.storage.ref().child(`perfil_petshop/${this.idUser}.jpg`).put(this.imagem).then(response=>{
+
+    this.storage.storage.ref().child(`addimagem/${this.idUser}.jpg`).put(img).then(response=>{
          
-        console.log("imagerm enviada com sucesso");
+        this.dowloadImage();
 
       });
+    }
     
-      
-      }
+    
 
       dowloadImage(){
 
-        this.storage.storage.ref().child(`perfil_petshop/${this.idUser}.jpg`).getDownloadURL().then(response=>{
-          this.imagem = response;
+        this.storage.storage.ref().child(`addimagem/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+          this.cliente.imagem = response;
+        }).catch(response=>{
+          this.storage.storage.ref().child(`addimagem/perfil2.jpg`).getDownloadURL().then(response=>{
+            this.cliente.imagem = response;
+          })
+        })
 
-     });
+
+     
     }
 
     

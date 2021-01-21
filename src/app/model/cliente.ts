@@ -10,6 +10,7 @@ export class Cliente{
     ncasa:string;
     complemento:string;
     cep:string;
+    imagem: string;
 
     setData(objFirebase : any){
         this.nome = objFirebase.nome;
