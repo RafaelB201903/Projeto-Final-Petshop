@@ -4,8 +4,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LoadingController } from '@ionic/angular';
 import { ClienteService } from '../services/cliente.service';
-import { AngularFireStorage } from '@angular/fire/storage';
 import { Cliente } from '../model/cliente';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-add-imagem',
@@ -37,7 +37,6 @@ export class AddImagemPage implements OnInit {
   
 }
 
-  
      
 
   ngOnInit() {
@@ -45,6 +44,7 @@ export class AddImagemPage implements OnInit {
 
   iniciarForm() {
     this.formGroup = this.formBuilder.group({
+
       nome: [this.cliente.nome],
      
       telefone: [this.cliente.telefone],
@@ -53,6 +53,7 @@ export class AddImagemPage implements OnInit {
       cidade: [this.cliente.cidade],
       bairro: [this.cliente.bairro],
       endereco: [this.cliente.endereco],
+
       
 
     })
@@ -61,6 +62,7 @@ export class AddImagemPage implements OnInit {
     //Capturando a imagem atravás do input type file (html)
     let img = event.srcElement.files[0];
     //Enviar para o Storage
+
     this.storage.storage.ref().child(`addimagem/${this.idUser}.jpg`).put(img).then(response=>{
          
         this.dowloadImage();
@@ -80,6 +82,10 @@ export class AddImagemPage implements OnInit {
           })
         })
 
-     }
+
+     
+    }
+
+    
 
 }

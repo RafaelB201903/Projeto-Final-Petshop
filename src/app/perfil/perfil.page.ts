@@ -26,8 +26,7 @@ export class PerfilPage implements OnInit {
                 this.auth.currentUser.then(response=>{
                   this.id=response.uid;
                   
-                  console.log(this.id)
-
+                  
                 
                 this.PetshopService.petshopPorId(this.id).subscribe(response => {
 

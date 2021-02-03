@@ -27,8 +27,12 @@ export class ConfirmarPedidoPage implements OnInit {
     private route: ActivatedRoute,
     private formBuilder : FormBuilder,
     private template : TemplateService,
-    ) {
+
+               ){
+
+
       this.iniciarForm();//iniciar o formulario para n dar erro
+
 
       this.route.paramMap.subscribe(url=>{
 
@@ -61,7 +65,7 @@ export class ConfirmarPedidoPage implements OnInit {
 
   atualizar(){
     
-      this.pedidoService.atualizarPedido(this.idpedido,this.formGroup.value).subscribe(response=>{
+      this.pedidoService.atualizarPedido(this.formGroup.value).subscribe(response=>{
         console.log(response);
         console.log(this.formGroup.value)
       })
