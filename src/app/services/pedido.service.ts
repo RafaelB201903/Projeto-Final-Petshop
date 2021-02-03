@@ -137,10 +137,10 @@ export class PedidoService {
    
 
     //confirmar no caso
-    atualizarPedido(pedido: any): Observable<any> {
+    atualizarPedido(id: any,pedido: any): Observable<any> {
         return from(new Observable(observe => {
 
-            this.firestore.collection('pedido').doc(pedido.id).set(pedido).then(response => {
+            this.firestore.collection('pedido').doc(id).set(pedido).then(response => {
                 observe.next("Atualizado com sucesso!");
             }, (err) => {
                 observe.error("Erro ao atualizar!");

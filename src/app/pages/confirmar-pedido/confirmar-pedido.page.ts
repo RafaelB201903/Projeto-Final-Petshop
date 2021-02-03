@@ -27,7 +27,12 @@ export class ConfirmarPedidoPage implements OnInit {
     private route: ActivatedRoute,
     private formBuilder : FormBuilder,
     private template : TemplateService,
-        ) {
+
+               ){
+
+
+      this.iniciarForm();//iniciar o formulario para n dar erro
+
 
       this.route.paramMap.subscribe(url=>{
 
@@ -42,13 +47,14 @@ export class ConfirmarPedidoPage implements OnInit {
 
 
         this.pedido.setData(response);
-    
+
+        this.iniciarForm();//iniciar o formulário de novo, porém agora com as informações do banco
           
         }, err=> {
         //o lista de cliente retorna observable 
         })
       })
-      this.iniciarForm();
+     
     }
 
 
