@@ -65,7 +65,7 @@ export class ConfirmarPedidoPage implements OnInit {
 
   atualizar(){
     
-      this.pedidoService.atualizarPedido(this.formGroup.value).subscribe(response=>{
+      this.pedidoService.atualizarPedido(this.pedido.id,this.formGroup.value).subscribe(response=>{
         console.log(response);
         console.log(this.formGroup.value)
       })
