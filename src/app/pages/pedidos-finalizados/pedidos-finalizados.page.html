@@ -7,7 +7,7 @@
 
 <ion-content>
 
-  <ion-card>
+  <ion-card *ngFor="let pedido of lista">
     <ion-row class="no-padding mg-top-20">
       <ion-col size="4">
        
@@ -21,11 +21,12 @@
 
 
         <ul style="list-style: none;">
+          <h3>{{pedido.pet}}</h3>
           <h3>Belinha</h3>
-          <li><ion-icon name="person-outline"></ion-icon> Toddy</li>
-          <li><ion-icon name="location-outline"></ion-icon> Rua das Amelias</li>
-          <li><ion-icon name="clipboard-outline"></ion-icon> Banho</li>
-          <li><ion-icon name="paw-outline"></ion-icon> Cachorro</li>
+          <li><ion-icon name="person-outline"></ion-icon> </li>
+          <li><ion-icon name="location-outline"></ion-icon> </li>
+          <li><ion-icon name="clipboard-outline"></ion-icon>{{pedido.servico}}</li>
+          <li><ion-icon name="paw-outline"></ion-icon> </li>
         
           <li><strong  >STATUS:</strong> <strong id="status"> FINALIZADO</strong></li>
 
