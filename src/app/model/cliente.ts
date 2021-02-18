@@ -21,7 +21,7 @@ export class Cliente{
         this.endereco = objFirebase.endereco;
         this.ncasa = objFirebase.ncasa;
         this.cep = objFirebase.cep;
-    
+        this.complemento = objFirebase.complemento;
     
     
     }

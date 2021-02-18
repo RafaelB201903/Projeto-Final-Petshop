@@ -1,3 +1,4 @@
+import { TemplateService } from 'src/app/services/template.service';
 import { MenuController, NavController, ToastController } from '@ionic/angular';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -15,7 +16,8 @@ export class CadastroPetshopPage implements OnInit {
   constructor(public navCtrl: NavController, 
     public firebaseauth : AngularFireAuth,
     public toastCtrl : ToastController,
-    public menuCtrl: MenuController) {}
+    public menuCtrl: MenuController,
+    public template : TemplateService) {}
 
   ngOnInit() {
   }
@@ -25,21 +27,22 @@ export class CadastroPetshopPage implements OnInit {
   }
 
   cadastrar() {
+    this.template.loading.then(load=>{
+    load.present();
+
     this.firebaseauth.createUserWithEmailAndPassword(this.email.value,this.senha.value)
       .then(()=> {
-        this.msgSucesso();
+        this.template.myAlert("Cadastrado com sucesso!")
+        load.dismiss();
+        this.navCtrl.navigateForward(['/login-petshop'])
       })
       .catch(()=> {
-        this.msgErro();
+        this.template.myAlert("Erro ao cadastrar!")
+        load.dismiss();
       })
-  }
-
-  msgSucesso() {
-    console.log('sucesso ao cadastrar!')
-  }
-
-  msgErro() {
-   console.log('erro ao cadastrar!')
-  }
-
+    })
+    }
+  
+  
+  
 }

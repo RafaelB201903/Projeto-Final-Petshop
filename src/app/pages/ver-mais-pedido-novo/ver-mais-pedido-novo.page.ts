@@ -42,8 +42,8 @@ export class VerMaisPedidoNovoPage implements OnInit {
 
       //listar as informações do pedido
       this.pedidoService.buscaPorId(id).subscribe(response=>{
-        this.idpedido = response;
-        console.log(this.idpedido);
+       
+       
 
         this.id2 = response.idcliente;
         
@@ -80,11 +80,11 @@ export class VerMaisPedidoNovoPage implements OnInit {
   }
 
 
-  /*visualizar(idpedido){
+  visualizar(idpedido){
     //navigateFordward => para navegar pra frente, e n retornar
     //quero abrir essa pagina e quero enviar o cliente.id
-    this.navCtrl.navigateForward(['/confirmar-pedido',idpedido])
+    this.navCtrl.navigateForward(['/confirmar-pedido',this.idpedido])
     console.log(idpedido)
-  }*/
+  }
 
 }

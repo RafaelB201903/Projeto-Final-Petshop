@@ -34,7 +34,7 @@ export class PedidoService {
 
         }))
     }
-
+    //lista dos pedidos novos
     listaDePedidoPorStatus(id,status): Observable<any> {
 
         // Observable -> Aguardar resposta do servidor
@@ -59,6 +59,33 @@ export class PedidoService {
 
         }))
     }
+
+    //lista dos pedidos em andamento
+    listaDePedidoPorStatusEmAndamento(id,status): Observable<any> {
+
+        // Observable -> Aguardar resposta do servidor
+        return from(new Observable(observe => { // converter para Observable
+
+            // this.firestore.collection('cliente') -> Selecionar a coleção no Firestore
+            // .snapshotChanges().subscribe -> Tentar buscar no servidor
+            // response -> dados baixados do servidor, os clientes
+            this.firestore.collection("pedido",ref => ref.where("idpetshop","==",id).where("status","==",status)).snapshotChanges().subscribe(response => {
+                
+                let lista: Pedido[] = [];
+                response.map(obj => {
+                    // será repetido para cada registro, cada registro do Firestore se chama obj
+                    let pedido: Pedido = new Pedido();
+                    pedido.setData(obj.payload.doc.data()); // obj.payload.doc.data() -> Dados do cliente
+                    console.log(obj.payload.doc.data())
+                    pedido.id = obj.payload.doc.id; // inserindo ID
+                    lista.push(pedido); // adicionando o cliente na lista // push é adicionar
+                });
+                observe.next(lista);
+            })
+
+        }))
+    }
+    
 
     listaDeInfoCliente(id): Observable<any> {
 
@@ -149,6 +176,7 @@ export class PedidoService {
         }));
     }
 
+    
     
 
 }

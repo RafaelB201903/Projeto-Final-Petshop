@@ -1,7 +1,6 @@
 {
-  "name": "proj-final-petshop",
+  "name": "projeto-app",
   "integrations": {
-    "capacitor": {},
     "cordova": {}
   },
   "type": "angular"

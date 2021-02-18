@@ -29,8 +29,7 @@ const routes: Routes = [
   {
     path: 'cadastro-petshop',
     loadChildren: () => import('./cadastro-petshop/cadastro-petshop.module').then( m => m.CadastroPetshopPageModule),
-    canActivate : [AngularFireAuthGuard], 
-    data : {authGuardPipe : redirectToLogin}
+  
   },
   {
     path: 'redefinir-senha',
@@ -81,13 +80,13 @@ const routes: Routes = [
     data : {authGuardPipe : redirectToLogin}
   },
   {
-    path: 'ver-mais-pedido-em-andamento',
+    path: 'ver-mais-pedido-em-andamento/:id',
     loadChildren: () => import('./pages/ver-mais-pedido-em-andamento/ver-mais-pedido-em-andamento.module').then( m => m.VerMaisPedidoEmAndamentoPageModule),
     canActivate : [AngularFireAuthGuard], 
     data : {authGuardPipe : redirectToLogin}
   },
   {
-    path: 'ver-mais-pedidos-finalizados',
+    path: 'ver-mais-pedidos-finalizados/:id',
     loadChildren: () => import('./pages/ver-mais-pedidos-finalizados/ver-mais-pedidos-finalizados.module').then( m => m.VerMaisPedidosFinalizadosPageModule),
     canActivate : [AngularFireAuthGuard], 
     data : {authGuardPipe : redirectToLogin}
@@ -116,6 +115,13 @@ const routes: Routes = [
     canActivate : [AngularFireAuthGuard], 
     data : {authGuardPipe : redirectToLogin}
   },
+  {
+    path: 'finalizar-pedido/:id',
+    loadChildren: () => import('./pages/finalizar-pedido/finalizar-pedido.module').then( m => m.FinalizarPedidoPageModule),
+    canActivate : [AngularFireAuthGuard], 
+    data : {authGuardPipe : redirectToLogin}
+  },
+
 
   
 ];
