@@ -99,7 +99,7 @@ TEMPLATE (SERVICE)
 
 CADASTRO-PETSHOP
 
--Ajeitar o cadastro;
+-Ajeitar o cadastro; ok 18/02/2021
 
 
 
@@ -191,6 +191,8 @@ PERFIL
 
 -Inserir a imagem no perfil; 
 
+-Ajustar o circulo do perfil; ok 19/02/2021 rafael
+
 
 
 ATUALIZAR-INFO
@@ -201,3 +203,20 @@ ATUALIZAR-INFO
 
 TESTAR EM APARELHOS PEQUENOS
 
+
+
+
+RELATORIO 19/02/2021 -----------------------------------------------
+
+
+LOGIN-PETSHOP
+
+-Ajustar o card de login e senha para celulares pequenos; ok rafael 
+
+INICIAL-PETSHOP
+
+-Ajustar o card do login e senha para dispositivos pequenos;  ok 19/02/2021 rafael
+
+REDEFINIR-SENHA 
+
+-Corrigir o problema q n deixa ir para pagin; ok 19/02/2021 rafael

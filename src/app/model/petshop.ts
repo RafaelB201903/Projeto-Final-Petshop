@@ -19,6 +19,8 @@ export class Petshop{
     servico3:string;
     preco3:string;
 
+    imagem:string;
+
 
     setData(objFirebase : any){
         this.nome = objFirebase.nome;

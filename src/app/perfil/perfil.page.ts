@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Petshop } from '../model/petshop';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { NavController } from '@ionic/angular';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-perfil',
@@ -14,6 +15,7 @@ export class PerfilPage implements OnInit {
   petshop: Petshop = new Petshop();
   id : string = "";
   idcliente: string ="";
+  idUser: any = "";
 
   lista : Petshop[] = [];
   
@@ -21,6 +23,8 @@ export class PerfilPage implements OnInit {
   constructor(private PetshopService : PetshopService,
               private navCtrl : NavController,
               private auth : AngularFireAuth,
+              public storage: AngularFireStorage,
+              
             
               ) { 
                 this.auth.currentUser.then(response=>{
@@ -33,7 +37,7 @@ export class PerfilPage implements OnInit {
           
                   this.petshop.setData(response);
                   console.log(response);
-
+                  this.dowloadImage();
                   
               
                     
@@ -49,8 +53,21 @@ export class PerfilPage implements OnInit {
 
 
   ngOnInit() {
-    
-   
   }
+
+
+  dowloadImage(){
+
+    this.storage.storage.ref().child(`addimagem/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+      this.petshop.imagem = response;
+    }).catch(response=>{
+      this.storage.storage.ref().child(`addimagem/perfil2.jpg`).getDownloadURL().then(response=>{
+        this.petshop.imagem = response;
+      })
+    })
+
+ }
+
+
 
   }

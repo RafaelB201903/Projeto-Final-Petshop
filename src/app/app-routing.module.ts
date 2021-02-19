@@ -34,8 +34,7 @@ const routes: Routes = [
   {
     path: 'redefinir-senha',
     loadChildren: () => import('./redefinir-senha/redefinir-senha.module').then( m => m.RedefinirSenhaPageModule),
-    canActivate : [AngularFireAuthGuard], 
-    data : {authGuardPipe : redirectToLogin}
+    
   },
   {
     path: 'perfil',
