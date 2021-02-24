@@ -220,3 +220,10 @@ INICIAL-PETSHOP
 REDEFINIR-SENHA 
 
 -Corrigir o problema q n deixa ir para pagin; ok 19/02/2021 rafael
+
+
+24/02/2021 ------------------------------------------------------------------
+
+-Colocar o endereço e o nome do cliente na lista de pedidos;
+
+-Colocar ao lado da imagem do perfil os numeradores indicados;

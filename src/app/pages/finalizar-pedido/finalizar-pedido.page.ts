@@ -97,7 +97,8 @@ export class FinalizarPedidoPage implements OnInit {
       horario_entrega: [this.pedido.horario_entrega],
       status:[this.status],
       
-
+      endereco: [this.pedido.endereco],
+      nome_cliente: [this.pedido.nome_cliente]
       
      
     })

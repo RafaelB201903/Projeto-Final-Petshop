@@ -101,7 +101,8 @@ export class ConfirmarPedidoPage implements OnInit {
       horario_entrega: [],
       status:[this.status],
       
-
+      endereco: [this.pedido.endereco],
+      nome_cliente: [this.pedido.nome_cliente]
       
      
     })
