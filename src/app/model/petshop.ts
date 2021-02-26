@@ -19,6 +19,8 @@ export class Petshop{
     servico3:string;
     preco3:string;
 
+    imagem:string;
+
 
     setData(objFirebase : any){
         this.nome = objFirebase.nome;
@@ -35,5 +37,6 @@ export class Petshop{
         this.preco1 = objFirebase.preco1;
         this.preco2 = objFirebase.preco2;
         this.preco3 = objFirebase.preco3;
+        this.complemento = objFirebase.complemento;
     }
 }

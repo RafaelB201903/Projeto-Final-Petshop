@@ -9,6 +9,8 @@ export class Pedido{
     idpetshop:string;
     horario_coleta : string;
     horario_entrega:string ;
+    nome_cliente: string;
+    endereco: string;
 
     setData(objFirebase : any){
 
@@ -21,6 +23,7 @@ export class Pedido{
         this.idpetshop = objFirebase.idpetshop;
         this.horario_coleta = objFirebase.horario_coleta;
         this.horario_entrega = objFirebase.horario_entrega;
-
+        this.nome_cliente = objFirebase.nome_cliente;
+        this.endereco = objFirebase.endereco;
     }
 }

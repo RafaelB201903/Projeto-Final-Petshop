@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-alt-senha',
   templateUrl: './alt-senha.page.html',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AltSenhaPage implements OnInit {
 
+  
+
   constructor() { }
 
   ngOnInit() {
-  }
+    
+     }
+
+     
+  
 
 }

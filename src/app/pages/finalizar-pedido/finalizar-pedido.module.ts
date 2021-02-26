@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RedefinirSenhaPageRoutingModule } from './redefinir-senha-routing.module';
+import { FinalizarPedidoPageRoutingModule } from './finalizar-pedido-routing.module';
 
-import { RedefinirSenhaPage } from './redefinir-senha.page';
+import { FinalizarPedidoPage } from './finalizar-pedido.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RedefinirSenhaPageRoutingModule,
     ReactiveFormsModule,
+    FinalizarPedidoPageRoutingModule
   ],
-  declarations: [RedefinirSenhaPage]
+  declarations: [FinalizarPedidoPage]
 })
-export class RedefinirSenhaPageModule {}
+export class FinalizarPedidoPageModule {}

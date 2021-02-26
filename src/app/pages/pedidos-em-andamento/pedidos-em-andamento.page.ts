@@ -37,7 +37,7 @@ export class PedidosEmAndamentoPage implements OnInit {
       this.auth.currentUser.then(response=>{ // auth.currentUser -> Obten dados do usuario  
         this.id = response.uid;
         console.log(response.uid)
-      this.pedidoService.listaDePedidoPorStatus(response.uid,"em andamento").subscribe(response => {
+      this.pedidoService.listaDePedidoPorStatus(response.uid,"andamento").subscribe(response => {
        
         console.log(response);
         
@@ -57,14 +57,14 @@ export class PedidosEmAndamentoPage implements OnInit {
   visualizar(pedido){
     //navigateFordward => para navegar pra frente, e n retornar
     //quero abrir essa pagina e quero enviar o cliente.id
-    this.navCtrl.navigateForward(['/ver-mais-pedido-novo',pedido.id])
+    this.navCtrl.navigateForward(['/ver-mais-pedido-em-andamento',pedido.id])
     console.log(pedido.id)
   }
 
   visualizar2(pedido){
     //navigateFordward => para navegar pra frente, e n retornar
     //quero abrir essa pagina e quero enviar o cliente.id
-    this.navCtrl.navigateForward(['/confirmar-pedido',pedido.id])
+    this.navCtrl.navigateForward(['/finalizar-pedido',pedido.id])
     console.log(pedido.id)
   }
 

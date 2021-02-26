@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { NavController } from '@ionic/angular';
-import { Cliente } from 'src/app/model/cliente';
 import { Pedido } from 'src/app/model/pedidos';
 import { Pet } from 'src/app/model/pet';
-import { ClienteService } from 'src/app/services/cliente.service';
+import { Cliente } from 'src/app/model/cliente';
 import { PedidoService } from 'src/app/services/pedido.service';
-import { PetService } from 'src/app/services/pet.service';
+import { NavController } from '@ionic/angular';
+import { AngularFireAuth } from '@angular/fire/auth';
+
 
 @Component({
   selector: 'app-pedidos-finalizados',
@@ -30,14 +29,18 @@ export class PedidosFinalizadosPage implements OnInit {
   constructor(private pedidoService : PedidoService,
     private navCtrl : NavController,
     private auth : AngularFireAuth,
-    private PetService : PetService,
-    private ClienteService : ClienteService) { 
+
+    
+
+    ) { 
+
 
       this.auth.currentUser.then(response=>{ // auth.currentUser -> Obten dados do usuario  
         this.id = response.uid;
         console.log(response.uid)
-      this.pedidoService.listaDePedidoPorStatus(response.uid,"finalizados").subscribe(response => {
-       
+
+      this.pedidoService.listaDePedidoPorStatusEmAndamento(response.uid,"finalizado").subscribe(response => {
+
         console.log(response);
         
         this.lista = response;
@@ -56,15 +59,11 @@ export class PedidosFinalizadosPage implements OnInit {
   visualizar(pedido){
     //navigateFordward => para navegar pra frente, e n retornar
     //quero abrir essa pagina e quero enviar o cliente.id
-    this.navCtrl.navigateForward(['/ver-mais-pedido-novo',pedido.id])
+
+        this.navCtrl.navigateForward(['/ver-mais-pedidos-finalizados',pedido.id])
     console.log(pedido.id)
   }
 
-  visualizar2(pedido){
-    //navigateFordward => para navegar pra frente, e n retornar
-    //quero abrir essa pagina e quero enviar o cliente.id
-    this.navCtrl.navigateForward(['/confirmar-pedido',pedido.id])
-    console.log(pedido.id)
-  }
+
 
 }

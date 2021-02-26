@@ -1,6 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Pedidos novos</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -27,10 +31,12 @@
        
        <ul style="list-style: none;">
         <h3>{{pedido.pet}}</h3>
-        <li><ion-icon name="person-outline"></ion-icon> </li>
-        <li><ion-icon name="location-outline"></ion-icon> </li>
-        <li><ion-icon name="clipboard-outline"></ion-icon>{{pedido.servico}}</li>
+        <li><ion-icon name="person-outline"></ion-icon> {{pedido.nome_cliente}} </li>
+        <li><ion-icon name="location-outline"></ion-icon> {{pedido.endereco}}</li>
+        <li><ion-icon name="clipboard-outline"></ion-icon> {{pedido.servico}}</li>
         <li><ion-icon name="paw-outline"></ion-icon> </li>
+
+        <li><strong>STATUS:</strong> <strong id="status"> NOVO</strong></li>
       </ul>
         
       </ion-col>

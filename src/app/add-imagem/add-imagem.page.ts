@@ -63,7 +63,7 @@ export class AddImagemPage implements OnInit {
     let img = event.srcElement.files[0];
     //Enviar para o Storage
 
-    this.storage.storage.ref().child(`addimagem/${this.idUser}.jpg`).put(img).then(response=>{
+    this.storage.storage.ref().child(`perfil_petshop/${this.idUser}.jpg`).put(img).then(response=>{
          
         this.dowloadImage();
 
@@ -74,10 +74,10 @@ export class AddImagemPage implements OnInit {
 
       dowloadImage(){
 
-        this.storage.storage.ref().child(`addimagem/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+        this.storage.storage.ref().child(`perfil_petshop/${this.idUser}.jpg`).getDownloadURL().then(response=>{
           this.cliente.imagem = response;
         }).catch(response=>{
-          this.storage.storage.ref().child(`addimagem/perfil2.jpg`).getDownloadURL().then(response=>{
+          this.storage.storage.ref().child(`perfil_petshop/petshop_perfil.jpg`).getDownloadURL().then(response=>{
             this.cliente.imagem = response;
           })
         })

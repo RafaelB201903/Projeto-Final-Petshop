@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Finalizar Pedido</ion-title>
+
+    <ion-buttons slot="start" style="color:floralwhite">
+      <ion-button [routerLink]="['/tabs/pedidos-em-andamento']" >
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons > 
+
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+
+  <img src="assets/icon/dog.png" alt="">
+  <h1></h1>
+  <p>Rua das montanhas n°1230</p>
+
+  <ion-card>
+    <ion-card-header>
+    
+      <ion-card-subtitle>Confirme as informações e finalize o pedido.
+      </ion-card-subtitle>
+  
+  </ion-card-header>
+  
+
+</ion-card>
+
+<form [formGroup]="formGroup">
+
+    <ion-item>
+      <ion-label>data:</ion-label>
+      <ion-input disabled type="date" value="{{pedido.data_sugerido}}"  ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>horario de coleta:</ion-label>
+      <ion-input disabled type="time" value="{{pedido.horario_coleta}}"  ></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>horario de entrega:</ion-label>
+      <ion-input disabled type="time" value="{{pedido.horario_entrega}}" disabled  ></ion-input>
+    </ion-item>
+
+    
+  </form>
+
+    <br>
+
+    <ion-button color="danger" expand="block" (click)="finalizar()" >Finalizar</ion-button>
+   
+  
+
+</ion-content>

@@ -17,26 +17,24 @@
   <img src="assets/icon/dog.png" alt="">
 
   <h3 style="text-align:center; margin-bottom:20px;"><strong>Informações Geral</strong></h3>
-  <p><strong>Endereço:</strong> Rua Coronel Silva </p>
-<p><strong>Cidade:</strong>  Rio de Janeiro</p>
-<p><strong>Bairro:</strong> Campo Grandre</p>
-<p><strong>Telefone:</strong> 21 91234-2134</p>
-<p><strong>E-mail: </strong> bolinha@gmail.com</p>
-<p><strong>CPF:</strong> 000.000.000-00 </p>
+      <p><strong>Endereço:</strong> {{cliente.endereco}} </p>
+  <p><strong>Cidade:</strong>  {{cliente.cidade}}</p>
+  <p><strong>Bairro:</strong> {{cliente.bairro}}</p>
+  <p><strong>Telefone:</strong> {{cliente.telefone}}</p>
+  <p><strong>CPF:</strong> {{cliente.cpf}} </p>
 
-<h3 style="text-align:center; margin-bottom:20px; margin-top:20px;"><strong>Informações do Serviço</strong></h3>
+  <h3 style="text-align:center; margin-bottom:20px; margin-top:20px;"><strong>Informações do Serviço</strong></h3>
 
-<p><strong>Serviço(s):</strong> banho </p>
-<p><strong>Data:</strong> 11/02/2021 </p>
-<p><strong>Horário:</strong>13:00 </p>
+  <p><strong>Serviço(s):</strong>{{pedido.servico}}  </p>
+  <p><strong>Data:</strong>{{pedido.data_sugerido}}  </p>
+  <p><strong>Horário:</strong>{{pedido.horario_sugerido}} </p>
 
+      <h3 style="text-align:center; margin-bottom:20px; margin-top:20px;"><strong>Informações do Pet</strong></h3>
 
-    <h3 style="text-align:center; margin-bottom:20px; margin-top:20px;"><strong>Informações do Pet</strong></h3>
-
-    <p><strong>Nome do Pet:</strong> Belinha</p>
-    <p><strong>Raça:</strong> Labrador retriever</p>
-    <p><strong>Sexo:</strong> femea </p>
-    <p><strong>Especie:</strong> cachorro </p>
+      <p><strong>Nome do Pet:</strong>{{pet.nomedopet}} </p>
+      <p><strong>Raça:</strong>{{pet.raca}} </p>
+      <p><strong>Sexo:</strong>{{pet.sexo}}  </p>
+      <p><strong>Especie:</strong>{{pet.especie}} </p>
 
   <p id="p-status"><STRONG>STATUS:</STRONG> <strong id="andamento"> EM ANDAMENTO</strong></p>
 

@@ -1,3 +1,5 @@
+import { NavController } from '@ionic/angular';
+import { TemplateService } from 'src/app/services/template.service';
 import { Component, OnInit } from '@angular/core';
 import { PetshopService } from '../services/petshop.service';
 import { AngularFireAuth } from '@angular/fire/auth';
@@ -16,7 +18,9 @@ export class AtualizarInfoPage implements OnInit {
   
   constructor(private formBuilder : FormBuilder, 
     private petshopServ : PetshopService,
-    private auth : AngularFireAuth) { // AngularFireAuth -> pegar dados do usuario logado
+    private auth : AngularFireAuth,
+    private template : TemplateService,
+    private navCtrl : NavController) { // AngularFireAuth -> pegar dados do usuario logado
     
       this.iniciarForm(); // obrigatório inicializar o formulário
     
@@ -28,6 +32,7 @@ export class AtualizarInfoPage implements OnInit {
         this.petshopServ.buscaPerfilPorId(response.uid).subscribe(response=>{
           // se houver o perfil, colocar os dados para a variavel perfil
           this.perfil = response; // dados preenchidos
+          console.log(response)
           this.iniciarForm(); // atualizar os dados do formulário
         }
 
@@ -62,6 +67,8 @@ export class AtualizarInfoPage implements OnInit {
   }
 
   atualizar(){
+    this.template.loading.then(load=>{
+      load.present();
     
     this.auth.currentUser.then(response=>{ // auth.currentUser -> Obten dados do usuario
       // envio uid -> idUsuário
@@ -69,8 +76,16 @@ export class AtualizarInfoPage implements OnInit {
       this.petshopServ.atualizaPerfil(response.uid,this.formGroup.value).subscribe(response=>{
         console.log(response);
         console.log(this.formGroup.value)
+      
+        this.template.myAlert("Alteração feita com sucesso!");
+        load.dismiss()
+      
+      }, erro => {
+        this.template.myAlert("Erro ao alterar!");
+        load.dismiss()
       })
     })
+  })
   }
 
 }
