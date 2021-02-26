@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { TemplateService } from '../services/template.service';
 
 @Component({
   selector: 'app-alt-senha',
@@ -7,9 +10,52 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AltSenhaPage implements OnInit {
 
-  constructor() { }
+  
+  emailAddress: any;
 
-  ngOnInit() {
+  constructor(
+    private auth: AngularFireAuth,
+    public template : TemplateService
+    
+  ) { 
+    this.auth.currentUser.then(response=>{
+      this.emailAddress = response.email;
+      
+    })
   }
 
-}
+
+  ngOnInit() {
+    
+    
+  }
+  
+
+  recuperarSenha() {
+
+    
+     
+      var email = this.auth
+      console.log(email)
+      
+      console.log(this.emailAddress)
+
+      email.sendPasswordResetEmail(this.emailAddress).then(function () {
+
+       
+        
+        
+      }).catch(function (error) {
+     
+      
+     
+
+      });
+    
+    
+
+  }
+ 
+
+  }
+

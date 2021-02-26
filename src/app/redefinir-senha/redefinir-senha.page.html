@@ -6,7 +6,7 @@
    
   </div>
  
-  <form id="#form">
+  <form id="#form" [formGroup]="formGroup">
 
     <ion-card >
 
@@ -17,11 +17,11 @@
 
    <ion-item id="input">
      <ion-label position="floating" >E-mail:</ion-label>
-     <ion-input type="email" ></ion-input>
+     <ion-input type="email" formControlName="username"></ion-input>
     <!-- formControlName="nome" = vinculei com o ts-->
    </ion-item>
  
-   <ion-button expand="block" shape="round">
+   <ion-button expand="block" shape="round" (click)="recuperarSenha()">
      Enviar
    </ion-button>
   </form>

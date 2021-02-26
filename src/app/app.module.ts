@@ -18,7 +18,7 @@ import { AppComponent } from './app.component';
 import { ClienteService } from './services/cliente.service';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { PetService } from './services/pet.service';
-
+import { Push } from '@ionic-native/push/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -39,6 +39,7 @@ import { PetService } from './services/pet.service';
     PetshopService,
     ClienteService,
     PetService,
+    Push,
     PedidoService,
     
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

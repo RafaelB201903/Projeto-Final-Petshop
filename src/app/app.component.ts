@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Push, PushOptions, PushObject } from '@ionic-native/push/ngx';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -34,6 +34,7 @@ export class AppComponent implements OnInit {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
+    private push : Push,
     private statusBar: StatusBar
   ) {
     this.initializeApp();
@@ -43,6 +44,8 @@ export class AppComponent implements OnInit {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+
+      this.initializeFirebase();
     });
   }
 
@@ -51,5 +54,19 @@ export class AppComponent implements OnInit {
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+  }
+
+  private initializeFirebase() {
+    const options: PushOptions = {
+      android: {
+        senderID: '657124352584'
+      }
+    }
+
+    const pushObject: PushObject = this.push.init(options)
+
+    pushObject.on('registration').subscribe(res => console.log(` ${res.registrationId}`))
+
+    pushObject.on('notification').subscribe(res => console.log(`Já chegou o disco voador: ${res.message}`))
   }
 }
