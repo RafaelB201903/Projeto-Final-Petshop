@@ -14,9 +14,9 @@
 
 <ion-content>
 
-  <img src="assets/icon/dog.png" alt="">
-  <h1>{{pedido.pet}}</h1>
-  <p>Rua das montanhas n°1230</p>
+  <img src="{{pet.imagem}}" alt="">
+  <h1></h1>
+  <p>{{pedido.endereco}}</p>
 
   <ion-card>
     <ion-card-header>
@@ -39,7 +39,7 @@
 
 
     <ion-item>
-      <ion-label>Horário sugerido:</ion-label>
+      <ion-label>Horário sugerido pelo cliente:</ion-label>
       <ion-input type="time" disabled value="{{pedido.horario_sugerido}}" ></ion-input>
     </ion-item>
 

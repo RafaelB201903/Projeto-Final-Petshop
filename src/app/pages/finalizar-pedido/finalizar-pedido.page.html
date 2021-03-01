@@ -14,9 +14,11 @@
 
 <ion-content>
 
-  <img src="assets/icon/dog.png" alt="">
+ 
+
+  <img src="{{pet.imagem}}" alt="">
   <h1></h1>
-  <p>Rua das montanhas n°1230</p>
+  <p>{{pedido.endereco}}</p>
 
   <ion-card>
     <ion-card-header>
@@ -30,6 +32,8 @@
 </ion-card>
 
 <form [formGroup]="formGroup">
+
+  <span class="pull-left time-label"></span>
 
     <ion-item>
       <ion-label>data:</ion-label>

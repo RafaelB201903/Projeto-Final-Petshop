@@ -6,6 +6,8 @@ import { NavController } from '@ionic/angular';
 import { Pedido } from 'src/app/model/pedidos';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { TemplateService } from 'src/app/services/template.service';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { Pet } from 'src/app/model/pet';
 
 @Component({
   selector: 'app-confirmar-pedido',
@@ -19,6 +21,8 @@ export class ConfirmarPedidoPage implements OnInit {
   idpedido: string ="";
   formGroup: FormGroup;
   status: string = "andamento";
+  idUser: string = "";
+  pet: Pet = new Pet();
   
 
   constructor(private pedidoService : PedidoService,
@@ -27,6 +31,7 @@ export class ConfirmarPedidoPage implements OnInit {
     private route: ActivatedRoute,
     private formBuilder : FormBuilder,
     private template : TemplateService,
+    public storage: AngularFireStorage,
 
                ){
 
@@ -45,9 +50,11 @@ export class ConfirmarPedidoPage implements OnInit {
        
         this.pedidoService.buscaPorId(this.id).subscribe(response => {
 
-
+          
+        this.idUser = response.pet;
         this.pedido.setData(response);
         this.pedido.id = this.id;
+        this.dowloadImage();
         this.iniciarForm();//iniciar o formulário de novo, porém agora com as informações do banco
           
         }, err=> {
@@ -108,5 +115,19 @@ export class ConfirmarPedidoPage implements OnInit {
     })
   }
 
+  dowloadImage(){
+    console.log(this.idUser)
+    this.storage.storage.ref().child(`pet/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+      this.pet.imagem = response;
+     
+     
+    }).catch(response=>{
+      this.storage.storage.ref().child(`pet/dog.png`).getDownloadURL().then(response=>{
+        this.pet.imagem = response;
+        
+      })
+    })
+
+ }
 
 }

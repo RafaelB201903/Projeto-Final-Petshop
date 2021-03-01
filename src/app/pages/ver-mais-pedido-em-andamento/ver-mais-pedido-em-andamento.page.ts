@@ -7,6 +7,7 @@ import { NavController } from '@ionic/angular';
 import { PedidoService } from 'src/app/services/pedido.service';
 import { ActivatedRoute } from '@angular/router';
 import { ClienteService } from 'src/app/services/cliente.service';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'app-ver-mais-pedido-em-andamento',
@@ -23,12 +24,14 @@ export class VerMaisPedidoEmAndamentoPage implements OnInit {
   id2: string = "";
   idpet: string = "";
   id3: string = "";
+  idUser: any = "";
 
   constructor(private pedidoService : PedidoService,
     private navCtrl : NavController,
     private route: ActivatedRoute,
     private clienteService : ClienteService,
-    private PetService : PetService
+    private PetService : PetService,
+    public storage: AngularFireStorage,
     
     ) { }
 
@@ -57,9 +60,9 @@ export class VerMaisPedidoEmAndamentoPage implements OnInit {
      
         //listar as informações do pet
         this.PetService.buscaPetPorId(this.id3).subscribe(response=>{
-          this.idpet = response;
-          console.log(this.idpet);
-
+          this.idUser = this.id3;
+          this.dowloadImage();
+          
           this.pet.setData(response);
         })
 
@@ -86,5 +89,20 @@ export class VerMaisPedidoEmAndamentoPage implements OnInit {
     this.navCtrl.navigateForward(['/finalizar-pedido',this.idpedido])
     console.log(petshop.id)
   }
+
+  dowloadImage(){
+    console.log(this.idUser)
+    this.storage.storage.ref().child(`pet/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+      this.pet.imagem = response;
+     
+     
+    }).catch(response=>{
+      this.storage.storage.ref().child(`pet/dog.png`).getDownloadURL().then(response=>{
+        this.pet.imagem = response;
+       
+      })
+    })
+
+ }
 
 }

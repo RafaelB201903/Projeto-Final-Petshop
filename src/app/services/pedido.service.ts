@@ -2,13 +2,15 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 import { Pedido } from '../model/pedidos';
 import { Observable, from } from 'rxjs';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Injectable()
 
 export class PedidoService {
     pedido: Pedido = new Pedido();
 
-    constructor(private firestore: AngularFirestore) {}
+    constructor(private firestore: AngularFirestore,
+                private storage : AngularFireStorage) {}
 
 
     listaDeInfoPedidos(id): Observable<any> {

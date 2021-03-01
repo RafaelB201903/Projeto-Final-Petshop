@@ -11,6 +11,8 @@ export class Pedido{
     horario_entrega:string ;
     nome_cliente: string;
     endereco: string;
+    imagem: string;
+    descricao: string;
 
     setData(objFirebase : any){
 
@@ -25,5 +27,6 @@ export class Pedido{
         this.horario_entrega = objFirebase.horario_entrega;
         this.nome_cliente = objFirebase.nome_cliente;
         this.endereco = objFirebase.endereco;
+        this.descricao = objFirebase.descricao;
     }
 }

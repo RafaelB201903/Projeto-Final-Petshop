@@ -29,8 +29,10 @@ img {
     display: flex;
     align-items: center;
 
-    height:60% ;
-    width:60% ;
+    height:150px ;
+    width:150px;
+    border-radius: 50%;
+    border: 0px solid #ffffff;
 }
 
 p {

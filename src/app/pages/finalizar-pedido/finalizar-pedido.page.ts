@@ -6,6 +6,8 @@ import { NavController } from '@ionic/angular';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute } from '@angular/router';
 import { TemplateService } from 'src/app/services/template.service';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { Pet } from 'src/app/model/pet';
 
 @Component({
   selector: 'app-finalizar-pedido',
@@ -19,6 +21,8 @@ export class FinalizarPedidoPage implements OnInit {
   idpedido: string ="";
   formGroup: FormGroup;
   status: string = "finalizado";
+  idUser: string = "";
+  pet: Pet = new Pet();
   
 
   constructor(private pedidoService : PedidoService,
@@ -27,7 +31,7 @@ export class FinalizarPedidoPage implements OnInit {
     private route: ActivatedRoute,
     private formBuilder : FormBuilder,
     private template : TemplateService,
-
+    public storage: AngularFireStorage,
                ){
 
 
@@ -45,9 +49,11 @@ export class FinalizarPedidoPage implements OnInit {
        
         this.pedidoService.buscaPorId(this.id).subscribe(response => {
 
-
+       
+        this.idUser = response.pet;
         this.pedido.setData(response);
         this.pedido.id = this.id;
+        this.dowloadImage();
         this.iniciarForm();//iniciar o formulário de novo, porém agora com as informações do banco
           
         }, err=> {
@@ -58,6 +64,7 @@ export class FinalizarPedidoPage implements OnInit {
     }
 
   ngOnInit() {
+    //this.dataHoje()
     
   }
 
@@ -103,5 +110,30 @@ export class FinalizarPedidoPage implements OnInit {
      
     })
   }
-  
+
+  dowloadImage(){
+    console.log(this.idUser)
+    this.storage.storage.ref().child(`pet/${this.idUser}.jpg`).getDownloadURL().then(response=>{
+      this.pet.imagem = response;
+     
+     
+    }).catch(response=>{
+      this.storage.storage.ref().child(`pet/dog.png`).getDownloadURL().then(response=>{
+        this.pet.imagem = response;
+        
+      })
+    })
+
+ }
+
+ /*dataHoje() {
+  var data = new Date();
+  var min = new Date().getUTCHours();
+ var horas = new Date().getHours();
+ console.log(horas)
+ console.log(min);
+
+ var horario = horas + "&nbsp" + min;
+ console.log(horario);
+  }*/
 }
